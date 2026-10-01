@@ -207,6 +207,7 @@ h3 { margin: 0 0 10px; font-size: 20px; line-height: 1.4; }
   font-size: 13px;
   font-weight: 700;
 }
+.cert-link[hidden] { display: none !important; }
 .edit-note { font-style: italic; }
 
 .closing { text-align: center; }
