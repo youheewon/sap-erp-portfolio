@@ -200,6 +200,13 @@ h3 { margin: 0 0 10px; font-size: 20px; line-height: 1.4; }
 }
 .cert-list h3, .cert-list p { margin: 0; }
 .cert-list p { color: var(--sub); font-size: 14px; }
+.cert-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
 .edit-note { font-style: italic; }
 
 .closing { text-align: center; }
