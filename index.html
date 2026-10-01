@@ -270,7 +270,7 @@
             <div>
               <h3>SAP S/4HANA Cloud Private Edition - Sourcing and Procurement</h3>
               <p>Associate</p>
-              <a class="cert-link" href="certificates/sourcing-and-procurement.pdf" hidden>Certificate 보기</a>
+              <a class="cert-link" href="certificates/sourcing-and-procurement.pdf" hidden style="display:none">Certificate 보기</a>
             </div>
           </article>
           <article>
@@ -278,7 +278,7 @@
             <div>
               <h3>SAP S/4HANA Cloud Private Edition, Financial Accounting</h3>
               <p>Associate</p>
-              <a class="cert-link" href="certificates/financial-accounting.pdf" hidden>Certificate 보기</a>
+              <a class="cert-link" href="certificates/financial-accounting.pdf" hidden style="display:none">Certificate 보기</a>
             </div>
           </article>
         </div>
@@ -317,7 +317,10 @@
     document.querySelectorAll('.cert-link').forEach(async (link) => {
       try {
         const response = await fetch(link.href, { method: 'HEAD', cache: 'no-store' });
-        if (response.ok) link.hidden = false;
+        if (response.ok) {
+          link.hidden = false;
+          link.style.display = 'inline-block';
+        }
       } catch (_) {
         // Certificate files are optional and may be added later.
       }
