@@ -270,6 +270,7 @@
             <div>
               <h3>SAP S/4HANA Cloud Private Edition - Sourcing and Procurement</h3>
               <p>Associate</p>
+              <a class="cert-link" href="certificates/sourcing-and-procurement.pdf" hidden>Certificate 보기</a>
             </div>
           </article>
           <article>
@@ -277,6 +278,7 @@
             <div>
               <h3>SAP S/4HANA Cloud Private Edition, Financial Accounting</h3>
               <p>Associate</p>
+              <a class="cert-link" href="certificates/financial-accounting.pdf" hidden>Certificate 보기</a>
             </div>
           </article>
         </div>
@@ -306,11 +308,20 @@
         <p>ABAP · S/4HANA · RAP · CDS · OData</p>
       </div>
       <div class="contact">
-        <!-- 공개용 이름 입력 위치 -->
-        <!-- 공개용 이메일 입력 시 mailto 링크 추가 -->
-        <span>연락처 준비 중</span>
+        <span>유희원</span>
+        <a href="mailto:heewon3514@naver.com">heewon3514@naver.com</a>
       </div>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll('.cert-link').forEach(async (link) => {
+      try {
+        const response = await fetch(link.href, { method: 'HEAD', cache: 'no-store' });
+        if (response.ok) link.hidden = false;
+      } catch (_) {
+        // Certificate files are optional and may be added later.
+      }
+    });
+  </script>
 </body>
 </html>
