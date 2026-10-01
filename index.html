@@ -268,17 +268,15 @@
           <article>
             <span>SAP</span>
             <div>
-              <h3>SAP S/4HANA Cloud Private Edition - Sourcing and Procurement</h3>
-              <p>Associate</p>
-              <a class="cert-link" href="certificates/sourcing-and-procurement.pdf" hidden style="display:none">Certificate 보기</a>
+              <h3>SAP Certified - SAP S/4HANA Cloud Private Edition - Sourcing and Procurement</h3>
+              <a class="btn cert-link" href="https://www.credly.com/badges/7d34a40b-48ac-4b6b-8c11-8f41fa1b5d7e" target="_blank" rel="noopener">View Credential</a>
             </div>
           </article>
           <article>
             <span>SAP</span>
             <div>
-              <h3>SAP S/4HANA Cloud Private Edition, Financial Accounting</h3>
-              <p>Associate</p>
-              <a class="cert-link" href="certificates/financial-accounting.pdf" hidden style="display:none">Certificate 보기</a>
+              <h3>SAP Certified Associate - SAP S/4HANA Cloud Private Edition, Financial Accounting</h3>
+              <a class="btn cert-link" href="https://www.credly.com/badges/6f04613b-d84e-473b-afe3-c330dfacd8ce" target="_blank" rel="noopener">View Credential</a>
             </div>
           </article>
         </div>
@@ -313,18 +311,5 @@
       </div>
     </div>
   </footer>
-  <script>
-    document.querySelectorAll('.cert-link').forEach(async (link) => {
-      try {
-        const response = await fetch(link.href, { method: 'HEAD', cache: 'no-store' });
-        if (response.ok) {
-          link.hidden = false;
-          link.style.display = 'inline-block';
-        }
-      } catch (_) {
-        // Certificate files are optional and may be added later.
-      }
-    });
-  </script>
 </body>
 </html>
