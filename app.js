@@ -112,3 +112,44 @@ content.addEventListener("click", async event=>{
     try { localStorage.setItem("portfolio-theme", next); } catch (error) { /* No storage available. */ }
   });
 })();
+
+/* Copy buttons in the persistent sidebar and dynamically loaded About Me view. */
+document.addEventListener("click", async (event) => {
+  const button = event.target.closest("button[data-copy-email]");
+  if (!button) return;
+  const email = button.dataset.copyEmail;
+  const parent = button.closest(".sidebar-profile, .about-contact-email");
+  const feedback = parent?.querySelector(".email-copy-feedback");
+  button.disabled = true;
+  try {
+    let copied = false;
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(email);
+        copied = true;
+      } catch (error) { /* Fall back for browsers without clipboard permission. */ }
+    }
+    if (!copied) {
+      const input = document.createElement("textarea");
+      input.value = email;
+      input.readOnly = true;
+      input.style.position = "fixed";
+      input.style.left = "-9999px";
+      document.body.appendChild(input);
+      input.select();
+      try { copied = document.execCommand("copy"); }
+      finally { input.remove(); }
+    }
+    if (!copied) throw new Error("Clipboard copy unavailable");
+    button.innerHTML = '<span aria-hidden="true">✓</span> Copied';
+    if (feedback) feedback.textContent = "이메일 주소가 복사됐습니다.";
+  } catch (error) {
+    if (feedback) feedback.textContent = "복사에 실패했습니다. 이메일 주소를 직접 선택해 주세요.";
+  } finally {
+    button.disabled = false;
+    window.setTimeout(() => {
+      if (button.isConnected) button.innerHTML = '<span aria-hidden="true">📋</span> Copy';
+      if (feedback?.isConnected) feedback.textContent = "";
+    }, 2200);
+  }
+});

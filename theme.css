@@ -101,3 +101,11 @@
 :root[data-theme="dark"] .kt-copy-link:hover{background:#284562}
 :root[data-theme="dark"] .kt-result-panel .kt-copy-feedback{color:#b7cbe0}
 :root[data-theme="dark"] .kt-result-eyebrow{color:#a6d4ff}
+
+/* Copy buttons in dark mode */
+:root[data-theme="dark"] .about-contact-links .about-contact-email{background:#213249}
+:root[data-theme="dark"] .about-contact-links .about-contact-email:hover{background:#2b415c}
+:root[data-theme="dark"] .about-contact-email > a{background:transparent}
+:root[data-theme="dark"] .email-copy-btn{background:#29405a;border-color:#4a6788;color:#d2eaff}
+:root[data-theme="dark"] .email-copy-btn:hover{background:#355675;border-color:#6b98ca}
+:root[data-theme="dark"] .email-copy-feedback{color:#afc3db}
