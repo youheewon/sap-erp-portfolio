@@ -55,3 +55,14 @@
 .e2e-subintro{margin-top:10px}
 .e2e-issues{margin-top:22px}
 @media(max-width:700px){.e2e-section-nav{top:58px;gap:7px}.e2e-chapter{scroll-margin-top:142px;padding-top:29px}}
+
+/* KT SafeLine — compact UI controls and clearly attributed team release */
+.kt-page .detail-grid{margin:32px 0}
+.kt-page .capture-step--kt-control .capture-image{width:auto;max-height:156px;max-width:100%;object-fit:contain}
+.kt-page .capture-step--kt-control .capture-image-link{min-height:184px;padding:12px}
+.kt-result-panel{margin-top:22px;padding:27px}
+.kt-result-eyebrow{font-size:11px;color:var(--accent);font-weight:800;letter-spacing:.12em;margin:0 0 5px}
+.kt-result-panel h3{font-size:20px;margin:0 0 10px}
+.kt-result-panel p{font-size:14px;color:var(--muted);margin:0 0 18px;max-width:740px}
+.kt-result-link{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;padding:10px 15px;border-radius:9px;font-size:13px;font-weight:750;text-decoration:none}
+.kt-result-link:hover{filter:brightness(.94)}

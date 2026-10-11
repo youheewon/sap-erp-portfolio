@@ -1,12 +1,107 @@
-<section>
- <p class="eyebrow">PROJECTS / 05 · 팀 프로젝트 - 6인</p><h1 class="page-title">KT SafeLine</h1><p class="page-lead">KT 디지털인재 사회문제 해결 프로젝트에서 Flutter 프론트엔드를 담당한 협업 프로젝트입니다.</p>
- <div class="detail-meta"><span>Flutter</span><span>API Integration</span><span>Git Collaboration</span><span>UI Implementation</span></div>
- <h2 class="page-heading">Process / Architecture</h2><div class="process"><span class="process-step">Route UX</span><span class="process-arrow">→</span><span class="process-step">Flutter Frontend</span><span class="process-arrow">→</span><span class="process-step">Tashu API</span><span class="process-arrow">→</span><span class="process-step">Web</span></div>
+<section class="project-app-detail e2e-page kt-page">
+ <p class="eyebrow">PROJECT 05 · 팀 프로젝트 - 6인 · Flutter Frontend</p>
+ <h1 class="page-title">KT SafeLine · 길잇 (GiLiT)</h1>
+ <p class="page-lead">KT 디지털인재 사회문제 해결 프로젝트에서 진행한 안전한 자전거 이동 경로 안내 앱입니다. 6인 팀과 협업했으며, 저는 Flutter 프론트엔드 개발에 참여했습니다. 추천 경로를 지도에 표시하고 타슈 API를 연계한 화면을 구현했습니다.</p>
+ <div class="detail-meta"><span>Flutter / Flutter Web</span><span>Map UI</span><span>Route Selection UX</span><span>타슈 API</span><span>Git Collaboration</span><span>Toss MiniApp · 팀 성과</span></div>
  <div class="detail-grid">
-  <article class="detail-panel surface"><h3>My Role / Implementation</h3><ul><li>6인 팀의 Flutter 프론트엔드 구현 참여</li><li>경로 안내 및 타슈 대여소 API 연계 화면 개발</li><li>협업 및 웹 배포 경험</li></ul></article>
-  <article class="detail-panel surface"><h3>Issue / Design Decision</h3><p>이 프로젝트는 SAP가 아닌 외부 개발 협업 경험을 보여주는 사례입니다. 포트폴리오에는 본인이 담당한 화면과 작업 범위를 별도로 설명할 예정입니다.</p></article>
+ <article class="detail-panel surface"><h3>My Role / Implementation</h3><ul>
+ <li>Flutter 프론트엔드 화면 및 레이아웃 개발</li>
+ <li>목적지 검색, 추천·후보 경로, 지도 조작 화면 구현</li>
+ <li>타슈 API 데이터와 연계된 대여소 마커 및 상세정보 UI 구현</li>
+ </ul></article>
+ <article class="detail-panel surface"><h3>Team Project / Outcome</h3><p>경로 추천과 관련된 팀 전체 기능을 하나의 앱으로 통합했습니다. 최종 결과물을 Toss MiniApp에 배포한 것은 팀 전체의 공동 성과입니다. 개인적으로 앱을 배포했다고 주장하지 않습니다.</p></article>
  </div>
- <h2 class="page-heading">Screenshots &amp; Portfolio</h2>
- <div class="asset-placeholder"><div><strong>이미지 추가 예정</strong>프로젝트 실행 화면, E2E 흐름도, 핵심 구현 내용을 여기에 추가할 수 있습니다.<br>assets/projects/kt-safeline/</div></div>
+ <nav class="e2e-section-nav" aria-label="KT SafeLine 프로젝트 챕터 이동"><span class="e2e-nav-label">CHAPTER</span>
+ <button type="button" class="chapter-link is-current" data-scroll-to="kt-start">01 · 경로 탐색</button>
+<button type="button" class="chapter-link" data-scroll-to="kt-routes">02 · 추천 / 후보 경로</button>
+<button type="button" class="chapter-link" data-scroll-to="kt-map">03 · 지도 / 타슈</button>
+<button type="button" class="chapter-link" data-scroll-to="kt-result">04 · 팀 결과물</button>
+ </nav>
+ <section class="e2e-chapter" id="kt-start" aria-labelledby="kt-title-0">
+ <p class="eyebrow">CHAPTER 01</p><h2 id="kt-title-0" class="chapter-title">01. 초기 화면과 목적지 검색</h2>
+ <p class="chapter-intro">메인 화면과 목적지 검색 UI를 Flutter로 구현했습니다. 사용자에게 필요한 탐색 기능을 지도와 함께 배치했습니다.</p><div class="capture-list"><article class="capture-step" aria-labelledby="kt-shot-1">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/1.MainScreen_in_tablet_and_wideScreen.png" target="_blank" rel="noopener noreferrer" aria-label="메인 화면 — 경로 탐색 시작 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/1.MainScreen_in_tablet_and_wideScreen.png" alt="메인 화면 — 경로 탐색 시작" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>1.MainScreen_in_tablet_and_wideScreen.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 01 / 02 · 경로 탐색</span><h4 id="kt-shot-1">메인 화면 — 경로 탐색 시작</h4><p>지도와 검색 진입 버튼, 최근 경로 및 목적지 목록을 함께 보여주는 초기 화면입니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article>
+<article class="capture-step" aria-labelledby="kt-shot-2">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/2.Searching_destination_in_tablet_and_wideScreen.png" target="_blank" rel="noopener noreferrer" aria-label="목적지 검색 UI 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/2.Searching_destination_in_tablet_and_wideScreen.png" alt="목적지 검색 UI" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>2.Searching_destination_in_tablet_and_wideScreen.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 02 / 02 · 경로 탐색</span><h4 id="kt-shot-2">목적지 검색 UI</h4><p>출발지와 목적지를 검색하고 후보 위치를 선택할 수 있도록 입력·검색 결과 영역을 구성했습니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article></div></section>
+<section class="e2e-chapter" id="kt-routes" aria-labelledby="kt-title-1">
+ <p class="eyebrow">CHAPTER 02</p><h2 id="kt-title-1" class="chapter-title">02. 추천 경로와 후보 경로 표시</h2>
+ <p class="chapter-intro">팀에서 산출한 경로 결과를 지도와 정보 패널에 표시하는 프론트엔드 화면입니다. 여러 경로를 비교하고 선택할 수 있게 구성했습니다.</p><div class="capture-list"><article class="capture-step" aria-labelledby="kt-shot-3">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/3.Display_recommandPath_and_display_candidate_Path_in_tablet_and_wideScreen.png" target="_blank" rel="noopener noreferrer" aria-label="추천 경로와 경로 정보 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/3.Display_recommandPath_and_display_candidate_Path_in_tablet_and_wideScreen.png" alt="추천 경로와 경로 정보" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>3.Display_recommandPath_and_display_candidate_Path_in_tablet_and_wideScreen.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 01 / 03 · 추천 / 후보 경로</span><h4 id="kt-shot-3">추천 경로와 경로 정보</h4><p>추천 경로를 지도에 표시하고 이동 거리, 예상 소요시간, 안전 점수 등의 정보를 정보 패널에서 확인합니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article>
+<article class="capture-step" aria-labelledby="kt-shot-4">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/3-1.Display_recommandPath_and_display_candidate_Path_in_tablet_and_wideScreen.png" target="_blank" rel="noopener noreferrer" aria-label="후보 경로 비교 — 첫 번째 선택 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/3-1.Display_recommandPath_and_display_candidate_Path_in_tablet_and_wideScreen.png" alt="후보 경로 비교 — 첫 번째 선택" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>3-1.Display_recommandPath_and_display_candidate_Path_in_tablet_and_wideScreen.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 02 / 03 · 추천 / 후보 경로</span><h4 id="kt-shot-4">후보 경로 비교 — 첫 번째 선택</h4><p>추천 경로 외에도 후보 경로를 선택해 지도 선과 정보를 변경하는 모습을 보여줍니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article>
+<article class="capture-step" aria-labelledby="kt-shot-5">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/3-2.Display_recommandPath_and_display_candidate_Path_in_tablet_and_wideScreen.png" target="_blank" rel="noopener noreferrer" aria-label="후보 경로 비교 — 다른 선택 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/3-2.Display_recommandPath_and_display_candidate_Path_in_tablet_and_wideScreen.png" alt="후보 경로 비교 — 다른 선택" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>3-2.Display_recommandPath_and_display_candidate_Path_in_tablet_and_wideScreen.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 03 / 03 · 추천 / 후보 경로</span><h4 id="kt-shot-5">후보 경로 비교 — 다른 선택</h4><p>다른 후보를 선택했을 때 지도 경로와 거리·소요시간 정보가 바뀌는 화면입니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article></div></section>
+<section class="e2e-chapter" id="kt-map" aria-labelledby="kt-title-2">
+ <p class="eyebrow">CHAPTER 03</p><h2 id="kt-title-2" class="chapter-title">03. 지도 조작과 타슈 API 연계</h2>
+ <p class="chapter-intro">지도 사용에 필요한 빠른 이동 버튼과 대전 공영자전거 타슈 대여소 정보 UI를 구성했습니다. API로 받아온 대여소 위치와 대여 현황을 지도에서 확인하도록 연결했습니다.</p><div class="capture-list"><article class="capture-step capture-step--kt-control" aria-labelledby="kt-shot-6">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/4.UI_for_current_position_zoom.png" target="_blank" rel="noopener noreferrer" aria-label="현재 위치 버튼 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/4.UI_for_current_position_zoom.png" alt="현재 위치 버튼" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>4.UI_for_current_position_zoom.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 01 / 07 · 지도 / 타슈</span><h4 id="kt-shot-6">현재 위치 버튼</h4><p>지도의 현재 위치로 이동할 수 있도록 배치한 컨트롤입니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article>
+<article class="capture-step capture-step--kt-control" aria-labelledby="kt-shot-7">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/4-1.UI_for_All_path_button.png" target="_blank" rel="noopener noreferrer" aria-label="경로 전체 보기 버튼 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/4-1.UI_for_All_path_button.png" alt="경로 전체 보기 버튼" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>4-1.UI_for_All_path_button.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 02 / 07 · 지도 / 타슈</span><h4 id="kt-shot-7">경로 전체 보기 버튼</h4><p>선택한 경로의 전체 구간이 보이도록 지도 표시 범위를 조정하는 기능입니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article>
+<article class="capture-step capture-step--kt-control" aria-labelledby="kt-shot-8">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/4-2.UI_for_Fullscreen.png" target="_blank" rel="noopener noreferrer" aria-label="지도 확대 버튼 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/4-2.UI_for_Fullscreen.png" alt="지도 확대 버튼" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>4-2.UI_for_Fullscreen.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 03 / 07 · 지도 / 타슈</span><h4 id="kt-shot-8">지도 확대 버튼</h4><p>지도 영역을 크게 확인할 수 있도록 배치한 컨트롤입니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article>
+<article class="capture-step" aria-labelledby="kt-shot-9">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/5.Tashu_API.png" target="_blank" rel="noopener noreferrer" aria-label="타슈 대여소 위치 표시 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/5.Tashu_API.png" alt="타슈 대여소 위치 표시" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>5.Tashu_API.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 04 / 07 · 지도 / 타슈</span><h4 id="kt-shot-9">타슈 대여소 위치 표시</h4><p>타슈 API에서 제공하는 대여소 정보를 지도 마커로 표시한 화면입니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article>
+<article class="capture-step" aria-labelledby="kt-shot-10">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/6.Tashu_API_when_touch_rental_icon.png" target="_blank" rel="noopener noreferrer" aria-label="대여소 마커 선택 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/6.Tashu_API_when_touch_rental_icon.png" alt="대여소 마커 선택" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>6.Tashu_API_when_touch_rental_icon.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 05 / 07 · 지도 / 타슈</span><h4 id="kt-shot-10">대여소 마커 선택</h4><p>대여소 마커를 선택하면 장소명, 대여 현황 등 관련 정보를 팝업으로 확인할 수 있습니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article>
+<article class="capture-step" aria-labelledby="kt-shot-11">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/6-1.Tashu_API_when_touch_rental_icon_cant_rental.png" target="_blank" rel="noopener noreferrer" aria-label="대여가 어려운 대여소 상태 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/6-1.Tashu_API_when_touch_rental_icon_cant_rental.png" alt="대여가 어려운 대여소 상태" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>6-1.Tashu_API_when_touch_rental_icon_cant_rental.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 06 / 07 · 지도 / 타슈</span><h4 id="kt-shot-11">대여가 어려운 대여소 상태</h4><p>대여할 수 없는 상태의 대여소를 선택했을 때 사용자에게 상태를 안내하는 화면입니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article>
+<article class="capture-step" aria-labelledby="kt-shot-12">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/6-2.Tashu_API_when_touch_rental_icon_lean_pm.png" target="_blank" rel="noopener noreferrer" aria-label="보유 자전거가 적은 대여소 상태 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/6-2.Tashu_API_when_touch_rental_icon_lean_pm.png" alt="보유 자전거가 적은 대여소 상태" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>6-2.Tashu_API_when_touch_rental_icon_lean_pm.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 07 / 07 · 지도 / 타슈</span><h4 id="kt-shot-12">보유 자전거가 적은 대여소 상태</h4><p>자전거 수량이 적은 대여소에 대해 일반 상태와 구분된 안내를 제공하는 화면입니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article></div></section>
+<section class="e2e-chapter" id="kt-result" aria-labelledby="kt-title-3">
+ <p class="eyebrow">CHAPTER 04</p><h2 id="kt-title-3" class="chapter-title">04. Toss MiniApp — 팀의 최종 성과</h2>
+ <p class="chapter-intro">6인 팀이 만든 길잇(GiLiT) 프로젝트는 Toss MiniApp에 결과물이 게시됐습니다. 개인적으로 배포한 것이 아니라 팀 전체가 함께 완성하고 배포한 결과입니다. 저는 Flutter 프론트엔드 개발과 화면 구현에 참여했습니다.</p><div class="capture-list"><article class="capture-step" aria-labelledby="kt-shot-13">
+ <div class="capture-visual"><a class="capture-image-link" href="assets/projects/kt-safeline/7.Toss_MiniApp.png" target="_blank" rel="noopener noreferrer" aria-label="Toss MiniApp에 게시된 길잇 원본 이미지 보기">
+ <img class="capture-image" src="assets/projects/kt-safeline/7.Toss_MiniApp.png" alt="Toss MiniApp에 게시된 길잇" loading="lazy" decoding="async"/>
+ <span class="capture-fallback" hidden>스크린샷 파일을 업로드하면 여기에 표시됩니다.<br><small>7.Toss_MiniApp.png</small></span></a></div>
+ <div class="capture-copy"><span class="capture-step-label">SCREEN 01 / 01 · 팀 결과물</span><h4 id="kt-shot-13">Toss MiniApp에 게시된 길잇</h4><p>최종 결과물이 Toss MiniApp에서 제공되는 모습을 보여주는 화면입니다. 이는 팀 전체 프로젝트 성과이며, 개인 배포 실적으로 표기하지 않습니다.</p><span class="capture-zoom-hint">클릭하면 원본 크기로 볼 수 있습니다.</span></div>
+ </article></div><div class="kt-result-panel surface"><p class="kt-result-eyebrow">TEAM RESULT / TOSS MINIAPP</p><h3>길잇 · Toss MiniApp</h3><p>KT 디지털인재 6인 팀이 완성한 결과물을 Toss MiniApp에 배포했습니다. 배포 주체는 팀 전체이며, 개인 수행 업무는 Flutter 프론트엔드 개발입니다.</p><a class="kt-result-link" href="https://minion.toss.im/FMbiCyiB" target="_blank" rel="noopener noreferrer">Toss MiniApp에서 길잇 보기 ↗</a></div></section>
  <a class="action-link" href="#/projects">← All Projects</a>
- </section>
+</section>
