@@ -44,3 +44,14 @@
 /* Curated E2E presentation galleries */
 .e2e-page .detail-grid{margin:32px 0}.e2e-page .chapter-title{margin:0 0 14px}.e2e-page .chapter-intro{margin-bottom:22px}.e2e-section-nav{display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin:28px 0 12px}.e2e-chapter{padding:45px 0 10px;scroll-margin-top:100px}.e2e-note{margin:32px 0;color:#5d6d80;font-size:12px;background:#f3f6fa;border-radius:10px;padding:14px 16px}
 @media(max-width:700px){.e2e-chapter{scroll-margin-top:64px;padding-top:28px}}
+
+/* E2E module-specific sticky navigator and readable chapter layout */
+.e2e-section-nav{position:sticky;top:63px;z-index:1;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);display:flex;flex-wrap:nowrap;gap:8px;align-items:center;overflow-x:auto;white-space:nowrap;scrollbar-width:thin;max-width:100%;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 4px;margin:28px 0 12px}
+.e2e-section-nav .chapter-link{flex-shrink:0}
+.e2e-nav-label{font-size:10px;font-weight:800;color:#7a899b;letter-spacing:.12em;margin-right:6px}
+.e2e-chapter{padding:45px 0 12px;scroll-margin-top:153px}
+.e2e-chapter+.e2e-chapter{border-top:1px solid var(--line);margin-top:14px}
+.e2e-chapter .capture-list{margin-top:24px}
+.e2e-subintro{margin-top:10px}
+.e2e-issues{margin-top:22px}
+@media(max-width:700px){.e2e-section-nav{top:58px;gap:7px}.e2e-chapter{scroll-margin-top:142px;padding-top:29px}}
