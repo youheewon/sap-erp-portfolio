@@ -1,0 +1,103 @@
+/* Manual light/dark toggle. Theme changes never alter the original project screenshots. */
+.header-actions{display:flex;align-items:center;gap:14px}
+.theme-switch{appearance:none;display:flex;align-items:center;justify-content:center;gap:3px;width:104px;height:43px;padding:4px;background:#edf2f8;border:1px solid #e2e8f0;border-radius:999px;cursor:pointer;flex:none;transition:background .18s,border-color .18s}
+.theme-switch-option{width:44px;height:33px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-size:19px;line-height:1;opacity:.58;filter:grayscale(.35);transition:background .18s,color .18s,opacity .18s}
+:root:not([data-theme="dark"]) .theme-switch-sun{background:#dbe6f3;opacity:1;filter:none}
+:root[data-theme="dark"] .theme-switch{background:#080f1b;border-color:#25344c}
+:root[data-theme="dark"] .theme-switch-moon{background:#334260;opacity:1;filter:none}
+.theme-switch:hover{border-color:#a7bcd3}
+.theme-switch:focus-visible{outline:3px solid #79b8f1;outline-offset:3px}
+@media(max-width:700px){.header-actions{gap:12px}.theme-switch{height:39px;width:92px}.theme-switch-option{width:38px;height:30px;font-size:17px}}
+@media(prefers-reduced-motion:reduce){.theme-switch,.theme-switch-option{transition:none}}
+
+/* Dark palette: keep the current light site unchanged. */
+:root[data-theme="dark"]{
+  --bg:#0b1220;
+  --surface:#141e2e;
+  --sidebar:#0d1726;
+  --text:#e7eef9;
+  --muted:#adbacd;
+  --line:#2d3c52;
+  --accent:#91c5ff;
+  --accent-bg:#233952;
+  --green:#47cba3;
+  --shadow:0 14px 34px rgba(0,0,0,.16);
+  color-scheme:dark;
+}
+:root[data-theme="dark"] body{background:var(--bg);color:var(--text)}
+:root[data-theme="dark"] .app-shell{background:var(--surface)}
+:root[data-theme="dark"] .sidebar{background:var(--sidebar)}
+:root[data-theme="dark"] .sidebar-profile,
+:root[data-theme="dark"] .surface,
+:root[data-theme="dark"] .project-card,
+:root[data-theme="dark"] .capture-step,
+:root[data-theme="dark"] .cert-card{background:var(--surface);border-color:var(--line)}
+:root[data-theme="dark"] .identity-mark{background:#265d90}
+:root[data-theme="dark"] .identity strong,
+:root[data-theme="dark"] .sidebar-profile-info strong,
+:root[data-theme="dark"] .app-summary-top strong{color:var(--text)}
+:root[data-theme="dark"] .identity small,
+:root[data-theme="dark"] .sidebar-profile-info span,
+:root[data-theme="dark"] .sidebar-bottom,
+:root[data-theme="dark"] .about-name span{color:var(--muted)}
+:root[data-theme="dark"] .sidebar-avatar{background:#263b53;color:#bcddff}
+:root[data-theme="dark"] .navigator-caption{color:#a3b2c4}
+:root[data-theme="dark"] .tree-link,
+:root[data-theme="dark"] .tree-group summary{color:#c0cee0}
+:root[data-theme="dark"] .tree-icon{color:#9ebcda}
+:root[data-theme="dark"] .tree-link:hover,
+:root[data-theme="dark"] .tree-group summary:hover{background:#1d2c42;color:#f0f6ff}
+:root[data-theme="dark"] .tree-link.active{background:#26405c;color:#c6e3ff}
+:root[data-theme="dark"] .workspace-header{background:rgba(20,30,46,.96)}
+:root[data-theme="dark"] .mobile-topbar{background:#101b2c}
+:root[data-theme="dark"] .menu-toggle{background:#25374e;color:var(--text)}
+:root[data-theme="dark"] .mobile-brand{color:var(--text)}
+:root[data-theme="dark"] .crumb-muted,
+:root[data-theme="dark"] .crumb-divider{color:#a4b5cb}
+:root[data-theme="dark"] .workspace-footer{color:#a1b1c7}
+:root[data-theme="dark"] .page-lead,
+:root[data-theme="dark"] .chapter-intro{color:#b7c5d8}
+:root[data-theme="dark"] .info-panel p,
+:root[data-theme="dark"] .detail-panel p,
+:root[data-theme="dark"] .detail-panel li,
+:root[data-theme="dark"] .project-card p,
+:root[data-theme="dark"] .app-summary-card p,
+:root[data-theme="dark"] .cert-card p,
+:root[data-theme="dark"] .kt-result-panel p{color:var(--muted)}
+:root[data-theme="dark"] .metric,
+:root[data-theme="dark"] .chip,
+:root[data-theme="dark"] .detail-meta span,
+:root[data-theme="dark"] .process-step,
+:root[data-theme="dark"] .chapter-facts span{background:#23354b;color:#d1e4fa;border-color:#364b63}
+:root[data-theme="dark"] .metric strong{color:var(--text)}
+:root[data-theme="dark"] .metric span,
+:root[data-theme="dark"] .project-card .project-num,
+:root[data-theme="dark"] .capture-zoom-hint{color:#a4b7ce}
+:root[data-theme="dark"] .project-card:hover{border-color:#68a7ea}
+:root[data-theme="dark"] .about-contact-links a{background:#213249}
+:root[data-theme="dark"] .about-contact-links a:hover{background:#2b415c}
+:root[data-theme="dark"] .about-contact-links a span{color:#a4b5cb}
+:root[data-theme="dark"] .about-contact-links a strong{color:#b9dcff}
+:root[data-theme="dark"] .cert-logo{background:#28425c;color:#cce6ff}
+:root[data-theme="dark"] .capture-visual{background:#0f1a29}
+:root[data-theme="dark"] .capture-image-link{background:#1a293c;border-color:#33465c}
+:root[data-theme="dark"] .capture-fallback{color:#bac9dc}
+:root[data-theme="dark"] .capture-copy p{color:#b4c1d3}
+:root[data-theme="dark"] .capture-step--detail .capture-visual,
+:root[data-theme="dark"] .kt-page .capture-step--kt-control .capture-visual{background:#0f1a29}
+:root[data-theme="dark"] .asset-placeholder{color:#b1c2d5;border-color:#40566e;background:repeating-linear-gradient(-45deg,#17253a,#17253a 12px,#1a2b40 12px,#1a2b40 24px)}
+:root[data-theme="dark"] .asset-placeholder strong{color:#d1e4f9}
+:root[data-theme="dark"] .app-chapter-nav,
+:root[data-theme="dark"] .e2e-section-nav{background:rgba(20,30,46,.97)}
+:root[data-theme="dark"] .chapter-link{background:#1c2b41;border-color:#3c536c;color:#c1d2e5}
+:root[data-theme="dark"] .chapter-link.is-current{background:#2b4a67;border-color:#6596c8;color:#eef7ff}
+:root[data-theme="dark"] .e2e-nav-label,
+:root[data-theme="dark"] .chapter-nav-label{color:#b0bfd0}
+:root[data-theme="dark"] .gallery-heading small{color:#aebdd0}
+:root[data-theme="dark"] .e2e-note{background:#1d2c41;color:#c0cfe1}
+:root[data-theme="dark"] .kt-result-panel .kt-mobile-note{color:#d3e2f4}
+:root[data-theme="dark"] .kt-result-link{background:#286aab;color:#fff}
+:root[data-theme="dark"] .kt-copy-link{background:#192b40;color:#c6e6ff;border-color:#537a9f}
+:root[data-theme="dark"] .kt-copy-link:hover{background:#284562}
+:root[data-theme="dark"] .kt-result-panel .kt-copy-feedback{color:#b7cbe0}
+:root[data-theme="dark"] .kt-result-eyebrow{color:#a6d4ff}

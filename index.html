@@ -5,9 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="SAP ERP Developer Portfolio | E2E, ABAP, S/4HANA, RAP, CDS, OData" />
   <meta name="theme-color" content="#f7f9fc" />
+  <script>
+    // Apply the saved preference before stylesheets render.
+    (function () {
+      var theme = "light";
+      try {
+        var saved = localStorage.getItem("portfolio-theme");
+        if (saved === "dark" || saved === "light") theme = saved;
+      } catch (error) { /* Storage can be unavailable in restricted browsers. */ }
+      document.documentElement.setAttribute("data-theme", theme);
+      document.documentElement.style.colorScheme = theme;
+      var themeColor = document.querySelector('meta[name="theme-color"]');
+      if (themeColor) themeColor.content = theme === "dark" ? "#0d1523" : "#f7f9fc";
+    })();
+  </script>
   <title>About Me | SAP ERP Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="project-gallery.css" />
+  <link rel="stylesheet" href="theme.css" />
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -57,7 +72,13 @@
     <div class="workspace">
       <header class="workspace-header">
         <div class="crumb"><span class="crumb-muted">PORTFOLIO</span><span class="crumb-divider">/</span><span id="current-crumb">About Me</span></div>
-        <a class="header-github" href="https://github.com/youheewon" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <div class="header-actions">
+          <a class="header-github" href="https://github.com/youheewon" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <button id="theme-toggle" class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="다크 모드 켜기" title="다크 모드 켜기">
+            <span class="theme-switch-option theme-switch-sun" aria-hidden="true">☀️</span>
+            <span class="theme-switch-option theme-switch-moon" aria-hidden="true">🌙</span>
+          </button>
+        </div>
       </header>
       <main id="content" class="content" tabindex="-1" aria-live="polite">
         <p class="loading">About Me 페이지를 불러오는 중입니다.</p>

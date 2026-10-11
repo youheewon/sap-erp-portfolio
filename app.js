@@ -89,3 +89,26 @@ content.addEventListener("click", async event=>{
   if(feedback)feedback.textContent="복사하지 못했습니다. 보러가기 링크를 직접 복사해주세요.";
  }finally{button.disabled=false;}
 });
+
+
+/* Sun / moon theme switch. Preference is retained across pages and visits. */
+(function initThemeToggle() {
+  const toggle = document.getElementById("theme-toggle");
+  if (!toggle) return;
+  function applyTheme(theme) {
+    const dark = theme === "dark";
+    document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+    document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    toggle.setAttribute("aria-checked", String(dark));
+    toggle.setAttribute("aria-label", dark ? "라이트 모드 켜기" : "다크 모드 켜기");
+    toggle.title = dark ? "라이트 모드 켜기" : "다크 모드 켜기";
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.content = dark ? "#0d1523" : "#f7f9fc";
+  }
+  applyTheme(document.documentElement.getAttribute("data-theme") || "light");
+  toggle.addEventListener("click", () => {
+    const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    applyTheme(next);
+    try { localStorage.setItem("portfolio-theme", next); } catch (error) { /* No storage available. */ }
+  });
+})();
