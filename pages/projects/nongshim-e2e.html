@@ -1,12 +1,71 @@
-<section>
- <p class="eyebrow">PROJECTS / 01 · 팀 프로젝트 - 6인</p><h1 class="page-title">농심 E2E</h1><p class="page-lead">농심을 주제로 한 식품 제조업 SAP E2E 프로젝트. 실제 기업 구축이 아닌 공개 자료 기반 학내 프로젝트입니다.</p>
- <div class="detail-meta"><span>SAP Standard</span><span>IMG Configuration</span><span>SD / MM / FI/CO</span><span>Batch / SLED</span><span>ABAP CBO</span></div>
- <h2 class="page-heading">Process / Architecture</h2><div class="process"><span class="process-step">Sales</span><span class="process-arrow">→</span><span class="process-step">Procurement</span><span class="process-arrow">→</span><span class="process-step">Production</span><span class="process-arrow">→</span><span class="process-step">Delivery</span><span class="process-arrow">→</span><span class="process-step">Billing</span><span class="process-arrow">→</span><span class="process-step">FI/CO</span></div>
- <div class="detail-grid">
-  <article class="detail-panel surface"><h3>My Role / Implementation</h3><ul><li>PM으로 업무 프로세스 설계와 통합 테스트 관리</li><li>SD / MM / FI / CO 설정 및 표준 트랜잭션 적용</li><li>배송 현황 및 POD 관련 CBO 구현</li></ul></article>
-  <article class="detail-panel surface"><h3>Issue / Design Decision</h3><p>자재 초기 입고 단계에서 Material Ledger 설정 문제를 확인하고, 관련 Valuation Area를 수정해 입고 및 자재 평가를 정상화했습니다.</p></article>
- </div>
- <h2 class="page-heading">Screenshots &amp; Portfolio</h2>
- <div class="asset-placeholder"><div><strong>이미지 추가 예정</strong>프로젝트 실행 화면, E2E 흐름도, 핵심 구현 내용을 여기에 추가할 수 있습니다.<br>assets/projects/nongshim-e2e/</div></div>
- <a class="action-link" href="#/projects">← All Projects</a>
- </section>
+<section class="project-app-detail e2e-page">
+<p class="eyebrow">PROJECT 01 · 팀 프로젝트 - 6인 · PM</p><h1 class="page-title">농심 E2E</h1>
+<p class="page-lead">농심의 공개 자료를 바탕으로 식품 제조업의 업무 흐름을 설계한 학내 SAP E2E 프로젝트입니다. 실제 농심에 구축한 시스템이 아니며, SAP Standard 및 Configuration을 중심으로 진행했습니다.</p>
+<div class="detail-meta"><span>SAP Standard</span><span>IMG Configuration</span><span>SD · MM · PP · FI/CO 연계</span><span>Batch / SLED</span><span>ABAP CBO</span></div>
+<div class="detail-grid">
+  <article class="detail-panel surface"><h3>My Role / Implementation</h3><ul><li>PM으로 프로젝트 목표·일정 및 모듈 간 인터페이스를 관리</li><li>SD · MM · FI · CO Configuration 및 표준 트랜잭션 실행·검증</li><li>공통 Master Data 구성과 E2E 통합 테스트 수행</li><li>배송 현황 CBO와 외부 지도 API 연계 구현</li></ul></article>
+  <article class="detail-panel surface"><h3>Issue / Design Decision</h3><p>첫 프로젝트에서 CBO로 업무를 구현한 경험을 토대로, 이번에는 SAP Standard Transaction과 Configuration을 중심으로 업무 흐름을 구성했습니다. 자재 초기 입고에서는 Material Ledger 관련 설정을 점검하고 해당 Valuation Area의 설정을 조정해 입고와 자재 평가를 정상화했습니다.</p></article>
+</div>
+<nav class="e2e-section-nav" aria-label="농심 E2E 챕터 이동">
+<button type="button" class="chapter-link is-current" data-scroll-to="nongshim-e2e-chapter-1">01. SAP 조직과 E2E 설계</button>
+<button type="button" class="chapter-link" data-scroll-to="nongshim-e2e-chapter-2">02. Standard Transaction과 통합 테스트</button>
+<button type="button" class="chapter-link" data-scroll-to="nongshim-e2e-chapter-3">03. 배송 현황 CBO와 API 연계</button>
+</nav>
+<section class="e2e-chapter" id="nongshim-e2e-chapter-1">
+<h2 class="chapter-title">01. SAP 조직과 E2E 설계</h2><p class="chapter-intro">공개 자료로 조사한 식품 제조업 환경을 기반으로 Company Code, Plant, Sales Area, Controlling Area를 구성하고 모듈 간 문서 흐름을 설계했습니다.</p>
+<div class="capture-list"><article class="capture-step" aria-labelledby="nongshim-e2e-caption-1">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/nongshim-e2e/01_sap_org_structure.jpg" target="_blank" rel="noopener noreferrer" aria-label="SAP 조직 구조 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/nongshim-e2e/01_sap_org_structure.jpg" alt="SAP 조직 구조 — 원본 PDF 14페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>01_sap_org_structure.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 01 / 07 · PDF 14P</span><h4 id="nongshim-e2e-caption-1">SAP 조직 구조</h4><p>Company Code NS01, Plant PN10·PN20, 판매조직과 원가관리 영역을 포함한 프로젝트 조직 구조입니다. 제조 및 판매 시나리오에 맞춰 조직 단위를 구성했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article>
+<article class="capture-step" aria-labelledby="nongshim-e2e-caption-2">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/nongshim-e2e/02_e2e_process.jpg" target="_blank" rel="noopener noreferrer" aria-label="Standard 중심 E2E 흐름 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/nongshim-e2e/02_e2e_process.jpg" alt="Standard 중심 E2E 흐름 — 원본 PDF 17페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>02_e2e_process.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 02 / 07 · PDF 17P</span><h4 id="nongshim-e2e-caption-2">Standard 중심 E2E 흐름</h4><p>SD 주문을 시작으로 PP 생산, MM 조달·재고, FI/CO 회계 흐름을 연결한 팀 전체 E2E 설계도입니다. CBO로 보완한 배송 관련 단계도 포함돼 있습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article></div></section>
+<section class="e2e-chapter" id="nongshim-e2e-chapter-2">
+<h2 class="chapter-title">02. Standard Transaction과 통합 테스트</h2><p class="chapter-intro">SD·MM·FI/CO 영역의 SAP 표준 기능을 설정하고 실행했습니다. PP도 팀 E2E 프로세스에 포함됐지만 별도 담당자가 구현한 영역이므로 개인 구현 역할과 구분했습니다.</p>
+<div class="capture-list"><article class="capture-step" aria-labelledby="nongshim-e2e-caption-3">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/nongshim-e2e/03_sales_order_standard.jpg" target="_blank" rel="noopener noreferrer" aria-label="Sales Order 생성 — VA01 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/nongshim-e2e/03_sales_order_standard.jpg" alt="Sales Order 생성 — VA01 — 원본 PDF 20페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>03_sales_order_standard.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 03 / 07 · PDF 20P</span><h4 id="nongshim-e2e-caption-3">Sales Order 생성 — VA01</h4><p>SD 표준 트랜잭션 VA01을 이용해 주문 문서를 작성하는 단계입니다. Sales Area와 고객·자재 데이터를 이용해 후속 Delivery까지 연결되는 흐름을 검증했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article>
+<article class="capture-step" aria-labelledby="nongshim-e2e-caption-4">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/nongshim-e2e/06_mm_quality_inspection.jpg" target="_blank" rel="noopener noreferrer" aria-label="자재 입고 후 품질검사 — QA32 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/nongshim-e2e/06_mm_quality_inspection.jpg" alt="자재 입고 후 품질검사 — QA32 — 원본 PDF 55페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>06_mm_quality_inspection.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 04 / 07 · PDF 55P</span><h4 id="nongshim-e2e-caption-4">자재 입고 후 품질검사 — QA32</h4><p>MM 영역의 Quality Inspection 단계를 보여주는 화면입니다. 자재 입고 이후 검사재고의 처리와 후속 재고 상태 변경을 E2E 흐름에서 점검했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article></div></section>
+<section class="e2e-chapter" id="nongshim-e2e-chapter-3">
+<h2 class="chapter-title">03. 배송 현황 CBO와 API 연계</h2><p class="chapter-intro">SAP 배송 문서의 Plant와 Ship-to Party 주소를 조회해 외부 API로 지도를 표시하도록 CBO를 구현했습니다.</p>
+<div class="capture-list"><article class="capture-step" aria-labelledby="nongshim-e2e-caption-5">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/nongshim-e2e/04_delivery_management.jpg" target="_blank" rel="noopener noreferrer" aria-label="Delivery Management CBO 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/nongshim-e2e/04_delivery_management.jpg" alt="Delivery Management CBO — 원본 PDF 31페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>04_delivery_management.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 05 / 07 · PDF 31P</span><h4 id="nongshim-e2e-caption-5">Delivery Management CBO</h4><p>Sales Organization의 배송 문서들을 조회하는 CBO 초기 화면입니다. 배송 문서를 선택한 뒤 상세 현황을 확인하도록 구성했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article>
+<article class="capture-step" aria-labelledby="nongshim-e2e-caption-6">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/nongshim-e2e/05_delivery_map.jpg" target="_blank" rel="noopener noreferrer" aria-label="배송 경로 지도 표시 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/nongshim-e2e/05_delivery_map.jpg" alt="배송 경로 지도 표시 — 원본 PDF 33페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>05_delivery_map.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 06 / 07 · PDF 33P</span><h4 id="nongshim-e2e-caption-6">배송 경로 지도 표시</h4><p>배송 문서에서 추출한 출발지와 도착지의 주소를 변환하고 외부 지도 API의 경로 결과를 ABAP HTML Viewer에 표시했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article>
+<article class="capture-step" aria-labelledby="nongshim-e2e-caption-7">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/nongshim-e2e/07_naver_api_technical_note.jpg" target="_blank" rel="noopener noreferrer" aria-label="외부 API 호출 기술 노트 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/nongshim-e2e/07_naver_api_technical_note.jpg" alt="외부 API 호출 기술 노트 — 원본 PDF 75페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>07_naver_api_technical_note.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 07 / 07 · PDF 75P</span><h4 id="nongshim-e2e-caption-7">외부 API 호출 기술 노트</h4><p>SAP ABAP의 HTTP Client로 번역 API를 호출한 구현 기록입니다. 배송 현황 CBO에서 주소 변환·경로 표시 기능을 연결한 방식을 설명합니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article></div></section>
+<p class="e2e-note">Material Ledger 설정 문제로 입고가 지연되었을 때 원가 모듈을 범위에서 제외하기보다 오류 원인을 조사했습니다. 개발 서버에서 해당 설정을 조정한 뒤 입고 흐름을 재검증했습니다. 관련 오류 화면은 원본 발표 PDF에 포함되지 않아, 이 부분은 별도의 개발 경험 설명으로 구분합니다.</p>
+<a class="action-link" href="#/projects">← All Projects</a>
+</section>

@@ -1,12 +1,71 @@
-<section>
- <p class="eyebrow">PROJECTS / 02 · 팀 프로젝트 - 6인</p><h1 class="page-title">현대트랜시스 E2E</h1><p class="page-lead">현대트랜시스를 주제로 공개 자료를 조사해 자동차 부품 제조업의 프로세스를 설계한 학내 팀 프로젝트입니다.</p>
- <div class="detail-meta"><span>ABAP</span><span>Report / Screen</span><span>CBO</span><span>SD / FI</span><span>E2E Design</span></div>
- <h2 class="page-heading">Process / Architecture</h2><div class="process"><span class="process-step">Sales Order</span><span class="process-arrow">→</span><span class="process-step">Delivery</span><span class="process-arrow">→</span><span class="process-step">Billing</span><span class="process-arrow">→</span><span class="process-step">FI</span></div>
- <div class="detail-grid">
-  <article class="detail-panel surface"><h3>My Role / Implementation</h3><ul><li>PM으로 모듈별 데이터 흐름과 프로그램 사양서 정리</li><li>SD 및 FI 영역 CBO 개발</li><li>Sales Order 입력값 검증과 오류 메시지 처리</li></ul></article>
-  <article class="detail-panel surface"><h3>Issue / Design Decision</h3><p>각 단계의 입력값과 후속 프로세스로 전달되는 데이터를 정리해 CBO 프로그램 간 연결을 구현했습니다.</p></article>
- </div>
- <h2 class="page-heading">Screenshots &amp; Portfolio</h2>
- <div class="asset-placeholder"><div><strong>이미지 추가 예정</strong>프로젝트 실행 화면, E2E 흐름도, 핵심 구현 내용을 여기에 추가할 수 있습니다.<br>assets/projects/transys-e2e/</div></div>
- <a class="action-link" href="#/projects">← All Projects</a>
- </section>
+<section class="project-app-detail e2e-page">
+<p class="eyebrow">PROJECT 02 · 팀 프로젝트 - 6인 · PM</p><h1 class="page-title">현대트랜시스 E2E</h1>
+<p class="page-lead">현대트랜시스의 공개 자료를 바탕으로 자동차 부품 제조업의 SAP E2E 프로세스를 설계한 학내 프로젝트입니다. 표준 구축 사례가 아닌 ABAP CBO 중심의 구현 프로젝트입니다.</p>
+<div class="detail-meta"><span>ABAP Report / Screen</span><span>SD / FI CBO</span><span>E2E 프로세스 설계</span><span>Input Check</span><span>PM / 일정 관리</span></div>
+<div class="detail-grid">
+  <article class="detail-panel surface"><h3>My Role / Implementation</h3><ul><li>PM으로 모듈별 업무 흐름, 공통 데이터 및 프로그램 사양서 정리</li><li>담당자별 최초 배정과 별개로 일정 지연 영역의 SD·FI CBO를 직접 개발·보완</li><li>Sales Order의 고객·납기일·자재·수량 입력 검증 구현</li><li>후속 모듈이 사용할 데이터를 고려해 통합 테스트 수행</li></ul></article>
+  <article class="detail-panel surface"><h3>Issue / Design Decision</h3><p>프로그램을 개별 화면으로만 개발하지 않고 각 단계의 입력값과 다음 모듈로 전달될 데이터를 정리해 사양서를 작성했습니다. Sales Order 생성 단계에는 유효하지 않은 값이 후속 프로세스로 전달되지 않도록 Input Check와 오류 메시지를 적용했습니다.</p></article>
+</div>
+<nav class="e2e-section-nav" aria-label="현대트랜시스 E2E 챕터 이동">
+<button type="button" class="chapter-link is-current" data-scroll-to="transys-e2e-chapter-1">01. 프로젝트 계획과 업무 분석</button>
+<button type="button" class="chapter-link" data-scroll-to="transys-e2e-chapter-2">02. SD·FI CBO 개발</button>
+<button type="button" class="chapter-link" data-scroll-to="transys-e2e-chapter-3">03. PM으로 일정 이슈 대응</button>
+</nav>
+<section class="e2e-chapter" id="transys-e2e-chapter-1">
+<h2 class="chapter-title">01. 프로젝트 계획과 업무 분석</h2><p class="chapter-intro">팀별 역할과 15주 프로젝트 일정을 관리하고, 자동차 부품 제조업의 생산·판매·구매 업무를 SAP 조직 및 E2E 흐름으로 정리했습니다.</p>
+<div class="capture-list"><article class="capture-step" aria-labelledby="transys-e2e-caption-1">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/01_project_schedule.jpg" target="_blank" rel="noopener noreferrer" aria-label="프로젝트 15주 일정 계획 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/transys-e2e/01_project_schedule.jpg" alt="프로젝트 15주 일정 계획 — 원본 PDF 6페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>01_project_schedule.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 01 / 07 · PDF 6P</span><h4 id="transys-e2e-caption-1">프로젝트 15주 일정 계획</h4><p>분석·설계·CBO 개발·모듈별 검증·통합 테스트 단계를 나누어 일정표를 구성했습니다. PM으로 단계별 의존성을 확인했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article>
+<article class="capture-step" aria-labelledby="transys-e2e-caption-2">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/02_sap_org_structure.jpg" target="_blank" rel="noopener noreferrer" aria-label="SAP 조직 구조 설계 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/transys-e2e/02_sap_org_structure.jpg" alt="SAP 조직 구조 설계 — 원본 PDF 13페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>02_sap_org_structure.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 02 / 07 · PDF 13P</span><h4 id="transys-e2e-caption-2">SAP 조직 구조 설계</h4><p>파워트레인과 시트 업무를 구분한 Plant, Storage Location, Sales Organization 구조입니다. 팀 프로젝트의 업무 시나리오를 시스템 조직으로 설계했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article>
+<article class="capture-step" aria-labelledby="transys-e2e-caption-3">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/03_e2e_process.jpg" target="_blank" rel="noopener noreferrer" aria-label="SD·MM·PP·FI E2E 프로세스 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/transys-e2e/03_e2e_process.jpg" alt="SD·MM·PP·FI E2E 프로세스 — 원본 PDF 14페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>03_e2e_process.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 03 / 07 · PDF 14P</span><h4 id="transys-e2e-caption-3">SD·MM·PP·FI E2E 프로세스</h4><p>Sales Order 수요부터 생산, 조달, 출고, Billing 및 회계 단계까지 연결한 팀 전체 프로세스 흐름입니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article></div></section>
+<section class="e2e-chapter" id="transys-e2e-chapter-2">
+<h2 class="chapter-title">02. SD·FI CBO 개발</h2><p class="chapter-intro">명목상 모듈 분장과 실제 개발 기여는 달랐습니다. PM으로 지연되는 영역의 개발을 직접 맡아 SD·FI 기능을 구현하고 입력 검증과 프로세스 연결을 진행했습니다.</p>
+<div class="capture-list"><article class="capture-step" aria-labelledby="transys-e2e-caption-4">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/04_sales_order_cbo.jpg" target="_blank" rel="noopener noreferrer" aria-label="Sales Order 작성 프로그램 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/transys-e2e/04_sales_order_cbo.jpg" alt="Sales Order 작성 프로그램 — 원본 PDF 71페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>04_sales_order_cbo.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 04 / 07 · PDF 71P</span><h4 id="transys-e2e-caption-4">Sales Order 작성 프로그램</h4><p>SAP GUI 기반 Sales Order 생성 CBO 화면입니다. Header와 Item 입력 항목을 구분하고 주문 문서로 사용할 데이터를 구성했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article>
+<article class="capture-step" aria-labelledby="transys-e2e-caption-5">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/05_so_input_check.jpg" target="_blank" rel="noopener noreferrer" aria-label="Sales Order 입력값 검증 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/transys-e2e/05_so_input_check.jpg" alt="Sales Order 입력값 검증 — 원본 PDF 72페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>05_so_input_check.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 05 / 07 · PDF 72P</span><h4 id="transys-e2e-caption-5">Sales Order 입력값 검증</h4><p>Sold-to Party 등의 주문 필드를 검사하는 Input Check 사례입니다. 잘못된 값이 후속 처리 단계로 전달되지 않도록 오류 메시지를 적용했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article>
+<article class="capture-step" aria-labelledby="transys-e2e-caption-6">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/06_fi_open_item_cbo.jpg" target="_blank" rel="noopener noreferrer" aria-label="FI 미결항목 조회·처리 프로그램 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/transys-e2e/06_fi_open_item_cbo.jpg" alt="FI 미결항목 조회·처리 프로그램 — 원본 PDF 111페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>06_fi_open_item_cbo.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 06 / 07 · PDF 111P</span><h4 id="transys-e2e-caption-6">FI 미결항목 조회·처리 프로그램</h4><p>회계 문서의 미결항목을 조회하고 전기·정산 처리를 지원하도록 만든 FI CBO 화면입니다. 프로젝트 내 SD와 FI의 연결 흐름을 설명할 수 있는 사례입니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article></div></section>
+<section class="e2e-chapter" id="transys-e2e-chapter-3">
+<h2 class="chapter-title">03. PM으로 일정 이슈 대응</h2><p class="chapter-intro">설계와 개발이 예정 기간보다 길어졌을 때 일부 작업 기간을 재조정했습니다. 프로젝트 범위보다 구현과 통합 테스트의 완료 여부를 기준으로 일정을 다시 구성했습니다.</p>
+<div class="capture-list"><article class="capture-step" aria-labelledby="transys-e2e-caption-7">
+  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/07_schedule_issue.jpg" target="_blank" rel="noopener noreferrer" aria-label="개발 일정 지연 대응 원본 이미지 보기">
+    <img class="capture-image" src="assets/projects/transys-e2e/07_schedule_issue.jpg" alt="개발 일정 지연 대응 — 원본 PDF 120페이지" loading="lazy" decoding="async"/>
+    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>07_schedule_issue.jpg</small></span>
+  </a></div>
+  <div class="capture-copy"><span class="capture-step-label">FIGURE 07 / 07 · PDF 120P</span><h4 id="transys-e2e-caption-7">개발 일정 지연 대응</h4><p>처음 계획한 일정과 조정한 일정을 비교한 이슈 자료입니다. 테이블 설계와 모듈 개발에 소요되는 시간을 반영해 팀 일정에 적용했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
+</article></div></section>
+<p class="e2e-note">프로젝트 발표자료의 개발자 표기는 당시 팀 내 명목상 모듈 배정을 반영합니다. 포트폴리오의 ‘My Role’은 실제 수행한 PM·SD/FI 개발·검증 경험을 기준으로 구분해 작성했습니다.</p>
+<a class="action-link" href="#/projects">← All Projects</a>
+</section>
