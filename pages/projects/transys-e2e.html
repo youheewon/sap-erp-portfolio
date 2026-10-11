@@ -1,71 +1,440 @@
-<section class="project-app-detail e2e-page">
-<p class="eyebrow">PROJECT 02 · 팀 프로젝트 - 6인 · PM</p><h1 class="page-title">현대트랜시스 E2E</h1>
-<p class="page-lead">현대트랜시스의 공개 자료를 바탕으로 자동차 부품 제조업의 SAP E2E 프로세스를 설계한 학내 프로젝트입니다. 표준 구축 사례가 아닌 ABAP CBO 중심의 구현 프로젝트입니다.</p>
-<div class="detail-meta"><span>ABAP Report / Screen</span><span>SD / FI CBO</span><span>E2E 프로세스 설계</span><span>Input Check</span><span>PM / 일정 관리</span></div>
-<div class="detail-grid">
-  <article class="detail-panel surface"><h3>My Role / Implementation</h3><ul><li>PM으로 모듈별 업무 흐름, 공통 데이터 및 프로그램 사양서 정리</li><li>PM 업무와 병행해 일정이 지연된 SD·FI CBO 개발·보완</li><li>Sales Order의 고객·납기일·자재·수량 입력 검증 구현</li><li>후속 모듈이 사용할 데이터를 고려해 통합 테스트 수행</li></ul></article>
-  <article class="detail-panel surface"><h3>Issue / Design Decision</h3><p>프로그램을 개별 화면으로만 개발하지 않고 각 단계의 입력값과 다음 모듈로 전달될 데이터를 정리해 사양서를 작성했습니다. Sales Order 생성 단계에는 유효하지 않은 값이 후속 프로세스로 전달되지 않도록 Input Check와 오류 메시지를 적용했습니다.</p></article>
-</div>
-<nav class="e2e-section-nav" aria-label="현대트랜시스 E2E 챕터 이동">
-<button type="button" class="chapter-link is-current" data-scroll-to="transys-e2e-chapter-1">01. 프로젝트 계획과 업무 분석</button>
-<button type="button" class="chapter-link" data-scroll-to="transys-e2e-chapter-2">02. SD·FI CBO 개발</button>
-<button type="button" class="chapter-link" data-scroll-to="transys-e2e-chapter-3">03. PM으로 일정 이슈 대응</button>
-</nav>
-<section class="e2e-chapter" id="transys-e2e-chapter-1">
-<h2 class="chapter-title">01. 프로젝트 계획과 업무 분석</h2><p class="chapter-intro">팀별 역할과 15주 프로젝트 일정을 관리하고, 자동차 부품 제조업의 생산·판매·구매 업무를 SAP 조직 및 E2E 흐름으로 정리했습니다.</p>
-<div class="capture-list"><article class="capture-step" aria-labelledby="transys-e2e-caption-1">
-  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/01_project_schedule.jpg" target="_blank" rel="noopener noreferrer" aria-label="프로젝트 15주 일정 계획 원본 이미지 보기">
-    <img class="capture-image" src="assets/projects/transys-e2e/01_project_schedule.jpg" alt="프로젝트 15주 일정 계획 — 원본 PDF 6페이지" loading="lazy" decoding="async"/>
-    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>01_project_schedule.jpg</small></span>
-  </a></div>
-  <div class="capture-copy"><span class="capture-step-label">FIGURE 01 / 07 · PDF 6P</span><h4 id="transys-e2e-caption-1">프로젝트 15주 일정 계획</h4><p>분석·설계·CBO 개발·모듈별 검증·통합 테스트 단계를 나누어 일정표를 구성했습니다. PM으로 단계별 의존성을 확인했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
-</article>
-<article class="capture-step" aria-labelledby="transys-e2e-caption-2">
-  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/02_sap_org_structure.jpg" target="_blank" rel="noopener noreferrer" aria-label="SAP 조직 구조 설계 원본 이미지 보기">
-    <img class="capture-image" src="assets/projects/transys-e2e/02_sap_org_structure.jpg" alt="SAP 조직 구조 설계 — 원본 PDF 13페이지" loading="lazy" decoding="async"/>
-    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>02_sap_org_structure.jpg</small></span>
-  </a></div>
-  <div class="capture-copy"><span class="capture-step-label">FIGURE 02 / 07 · PDF 13P</span><h4 id="transys-e2e-caption-2">SAP 조직 구조 설계</h4><p>파워트레인과 시트 업무를 구분한 Plant, Storage Location, Sales Organization 구조입니다. 팀 프로젝트의 업무 시나리오를 시스템 조직으로 설계했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
-</article>
-<article class="capture-step" aria-labelledby="transys-e2e-caption-3">
-  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/03_e2e_process.jpg" target="_blank" rel="noopener noreferrer" aria-label="SD·MM·PP·FI E2E 프로세스 원본 이미지 보기">
-    <img class="capture-image" src="assets/projects/transys-e2e/03_e2e_process.jpg" alt="SD·MM·PP·FI E2E 프로세스 — 원본 PDF 14페이지" loading="lazy" decoding="async"/>
-    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>03_e2e_process.jpg</small></span>
-  </a></div>
-  <div class="capture-copy"><span class="capture-step-label">FIGURE 03 / 07 · PDF 14P</span><h4 id="transys-e2e-caption-3">SD·MM·PP·FI E2E 프로세스</h4><p>Sales Order 수요부터 생산, 조달, 출고, Billing 및 회계 단계까지 연결한 팀 전체 프로세스 흐름입니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
-</article></div></section>
-<section class="e2e-chapter" id="transys-e2e-chapter-2">
-<h2 class="chapter-title">02. SD·FI CBO 개발</h2><p class="chapter-intro">PM으로 프로젝트 전체 흐름을 관리하면서 SD·FI CBO를 직접 개발했습니다. 주문 입력값 검증과 후속 프로세스 간 데이터 전달도 함께 구현했습니다.</p>
-<div class="capture-list"><article class="capture-step" aria-labelledby="transys-e2e-caption-4">
-  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/04_sales_order_cbo.jpg" target="_blank" rel="noopener noreferrer" aria-label="Sales Order 작성 프로그램 원본 이미지 보기">
-    <img class="capture-image" src="assets/projects/transys-e2e/04_sales_order_cbo.jpg" alt="Sales Order 작성 프로그램 — 원본 PDF 71페이지" loading="lazy" decoding="async"/>
-    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>04_sales_order_cbo.jpg</small></span>
-  </a></div>
-  <div class="capture-copy"><span class="capture-step-label">FIGURE 04 / 07 · PDF 71P</span><h4 id="transys-e2e-caption-4">Sales Order 작성 프로그램</h4><p>SAP GUI 기반 Sales Order 생성 CBO 화면입니다. Header와 Item 입력 항목을 구분하고 주문 문서로 사용할 데이터를 구성했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
-</article>
-<article class="capture-step" aria-labelledby="transys-e2e-caption-5">
-  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/05_so_input_check.jpg" target="_blank" rel="noopener noreferrer" aria-label="Sales Order 입력값 검증 원본 이미지 보기">
-    <img class="capture-image" src="assets/projects/transys-e2e/05_so_input_check.jpg" alt="Sales Order 입력값 검증 — 원본 PDF 72페이지" loading="lazy" decoding="async"/>
-    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>05_so_input_check.jpg</small></span>
-  </a></div>
-  <div class="capture-copy"><span class="capture-step-label">FIGURE 05 / 07 · PDF 72P</span><h4 id="transys-e2e-caption-5">Sales Order 입력값 검증</h4><p>Sold-to Party 등의 주문 필드를 검사하는 Input Check 사례입니다. 잘못된 값이 후속 처리 단계로 전달되지 않도록 오류 메시지를 적용했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
-</article>
-<article class="capture-step" aria-labelledby="transys-e2e-caption-6">
-  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/06_fi_open_item_cbo.jpg" target="_blank" rel="noopener noreferrer" aria-label="FI 미결항목 조회·처리 프로그램 원본 이미지 보기">
-    <img class="capture-image" src="assets/projects/transys-e2e/06_fi_open_item_cbo.jpg" alt="FI 미결항목 조회·처리 프로그램 — 원본 PDF 111페이지" loading="lazy" decoding="async"/>
-    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>06_fi_open_item_cbo.jpg</small></span>
-  </a></div>
-  <div class="capture-copy"><span class="capture-step-label">FIGURE 06 / 07 · PDF 111P</span><h4 id="transys-e2e-caption-6">FI 미결항목 조회·처리 프로그램</h4><p>회계 문서의 미결항목을 조회하고 전기·정산 처리를 지원하도록 만든 FI CBO 화면입니다. 프로젝트 내 SD와 FI의 연결 흐름을 설명할 수 있는 사례입니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
-</article></div></section>
-<section class="e2e-chapter" id="transys-e2e-chapter-3">
-<h2 class="chapter-title">03. PM으로 일정 이슈 대응</h2><p class="chapter-intro">설계와 개발이 예정 기간보다 길어졌을 때 일부 작업 기간을 재조정했습니다. 프로젝트 범위보다 구현과 통합 테스트의 완료 여부를 기준으로 일정을 다시 구성했습니다.</p>
-<div class="capture-list"><article class="capture-step" aria-labelledby="transys-e2e-caption-7">
-  <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/07_schedule_issue.jpg" target="_blank" rel="noopener noreferrer" aria-label="개발 일정 지연 대응 원본 이미지 보기">
-    <img class="capture-image" src="assets/projects/transys-e2e/07_schedule_issue.jpg" alt="개발 일정 지연 대응 — 원본 PDF 120페이지" loading="lazy" decoding="async"/>
-    <span class="capture-fallback" hidden>이미지 추가 후 표시됩니다.<br><small>07_schedule_issue.jpg</small></span>
-  </a></div>
-  <div class="capture-copy"><span class="capture-step-label">FIGURE 07 / 07 · PDF 120P</span><h4 id="transys-e2e-caption-7">개발 일정 지연 대응</h4><p>처음 계획한 일정과 조정한 일정을 비교한 이슈 자료입니다. 테이블 설계와 모듈 개발에 소요되는 시간을 반영해 팀 일정에 적용했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
-</article></div></section>
-<p class="e2e-note">팀 전체 E2E 산출물과 개인 구현 영역은 My Role에서 구분했습니다. 프로젝트 중 일정이 지연된 모듈의 개발도 맡아 통합 테스트까지 연결했습니다.</p>
-<a class="action-link" href="#/projects">← All Projects</a>
+<section class="project-app-detail e2e-page transys-page">
+  <p class="eyebrow">PROJECT 02 · 팀 프로젝트 - 6인 · PM</p>
+  <h1 class="page-title">현대트랜시스 E2E</h1>
+  <p class="page-lead">현대트랜시스의 공개 자료를 바탕으로 자동차 부품 제조업의 업무 프로세스를 조사한 학내 SAP E2E 프로젝트입니다. 실제 현대트랜시스에 구축한 시스템이 아니며, ABAP CBO 중심으로 설계·개발했습니다.</p>
+  <div class="detail-meta"><span>ABAP Report / Screen</span><span>SD·FI CBO</span><span>SD·MM·PP·FI 통합</span><span>Input Check</span><span>PM / 일정 관리</span></div>
+  <div class="detail-grid">
+    <article class="detail-panel surface"><h3>My Role / Implementation</h3><ul>
+      <li>PM으로 E2E 프로세스 설계, 일정 및 개발 기준 관리</li>
+      <li>모듈 간 입력값과 전달 데이터를 정의하고 프로그램 사양서 작성</li>
+      <li>SD·FI CBO 개발과 Sales Order 입력값 검증 구현</li>
+      <li>일정이 지연된 기능을 보완하고 모듈 연계 테스트 진행</li>
+    </ul></article>
+    <article class="detail-panel surface"><h3>Project Approach</h3><p>기업의 공장·생산품·공급망·고객 데이터를 공개 자료로 조사한 뒤 SAP 조직과 업무 흐름을 설계했습니다. 모듈별로 개발한 프로그램이 문서를 주고받을 수 있도록 입력값과 후속 데이터를 정리했습니다. MM·PP 화면은 팀 전체 성과이며 개인 직접 개발 범위와 구분했습니다.</p></article>
+  </div>
+  <nav class="e2e-section-nav" aria-label="현대트랜시스 E2E 챕터 이동">
+    <span class="e2e-nav-label">CHAPTER</span>
+    <button type="button" class="chapter-link is-current" data-scroll-to="transys-planning">01 · 설계 / 일정</button>
+<button type="button" class="chapter-link" data-scroll-to="transys-sd">02 · SD</button>
+<button type="button" class="chapter-link" data-scroll-to="transys-mm">03 · MM</button>
+<button type="button" class="chapter-link" data-scroll-to="transys-pp">04 · PP</button>
+<button type="button" class="chapter-link" data-scroll-to="transys-fi">05 · FI</button>
+<button type="button" class="chapter-link" data-scroll-to="transys-pm">06 · PM / 이슈</button>
+<button type="button" class="chapter-link" data-scroll-to="transys-technical">07 · Technical Note</button>
+  </nav>
+  <section class="e2e-chapter" id="transys-planning" aria-labelledby="transys-title-0">
+  <p class="eyebrow">CHAPTER 01</p>
+  <h2 class="chapter-title" id="transys-title-0">01. 프로젝트 설계 및 일정 관리</h2>
+  <p class="chapter-intro">현대트랜시스의 공개 자료를 조사해 자동차 부품 제조업의 업무 흐름을 구성했습니다. PM으로 15주 일정과 Naming Rule을 수립하고, 모듈별 프로그램이 연결될 수 있도록 공통 조직 및 프로세스를 설계했습니다.</p>
+  <div class="capture-list"><article class="capture-step" aria-labelledby="transys-figure-1">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/08_naming_rule.jpg" target="_blank" rel="noopener noreferrer" aria-label="ABAP Naming Rule과 패키지 구조 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/08_naming_rule.jpg" alt="ABAP Naming Rule과 패키지 구조 — 원본 PDF 5페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>08_naming_rule.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 01 / 04 · PDF 5P</span>
+     <h4 id="transys-figure-1">ABAP Naming Rule과 패키지 구조</h4>
+     <p>모듈별 Package, Database Table, Domain, Program, Message Class의 이름을 일관되게 작성하기 위한 규칙입니다. 팀원들이 공통된 규칙을 사용할 수 있도록 정리했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-2">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/01_project_schedule.jpg" target="_blank" rel="noopener noreferrer" aria-label="15주 프로젝트 일정표 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/01_project_schedule.jpg" alt="15주 프로젝트 일정표 — 원본 PDF 6페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>01_project_schedule.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 02 / 04 · PDF 6P</span>
+     <h4 id="transys-figure-2">15주 프로젝트 일정표</h4>
+     <p>기획과 프로세스 분석, 테이블 및 화면 설계, 모듈별 프로그램 개발, 인터페이스 테스트, 발표 준비 일정을 계획했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-3">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/02_sap_org_structure.jpg" target="_blank" rel="noopener noreferrer" aria-label="SAP 조직 구조 설계 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/02_sap_org_structure.jpg" alt="SAP 조직 구조 설계 — 원본 PDF 13페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>02_sap_org_structure.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 03 / 04 · PDF 13P</span>
+     <h4 id="transys-figure-3">SAP 조직 구조 설계</h4>
+     <p>자동차 부품과 시트 업무를 구분해 Company Code, Plant, Storage Location, Sales Organization 등의 관계를 설계했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-4">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/03_e2e_process.jpg" target="_blank" rel="noopener noreferrer" aria-label="SD·MM·PP·FI E2E 프로세스 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/03_e2e_process.jpg" alt="SD·MM·PP·FI E2E 프로세스 — 원본 PDF 14페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>03_e2e_process.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 04 / 04 · PDF 14P</span>
+     <h4 id="transys-figure-4">SD·MM·PP·FI E2E 프로세스</h4>
+     <p>Inquiry에서 수주, 자재 조달과 생산, 출고, Billing 및 회계까지 연결되는 팀 전체 프로세스를 설계했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article></div>
+</section>
+<section class="e2e-chapter" id="transys-sd" aria-labelledby="transys-title-1">
+  <p class="eyebrow">CHAPTER 02</p>
+  <h2 class="chapter-title" id="transys-title-1">02. SD — Sales & Distribution</h2>
+  <p class="chapter-intro">Inquiry, Quotation, Sales Order, Outbound Delivery 등의 흐름을 CBO로 구성했습니다. 특히 Sales Order에서는 Header·Item 입력값 검증과 주문 상태 변경을 구현해 잘못된 데이터가 후속 업무로 넘어가지 않도록 했습니다.</p>
+  <div class="capture-list"><article class="capture-step" aria-labelledby="transys-figure-5">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/09_sd_inquiry.jpg" target="_blank" rel="noopener noreferrer" aria-label="Inquiry 조회 및 Sales Area 검증 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/09_sd_inquiry.jpg" alt="Inquiry 조회 및 Sales Area 검증 — 원본 PDF 30페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>09_sd_inquiry.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 01 / 08 · PDF 30P</span>
+     <h4 id="transys-figure-5">Inquiry 조회 및 Sales Area 검증</h4>
+     <p>Sales Organization, Distribution Channel, Division 조건에 맞는 Inquiry를 조회합니다. 유효하지 않은 Sales Area에는 오류 메시지를 보여주도록 했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-6">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/10_sd_quotation.jpg" target="_blank" rel="noopener noreferrer" aria-label="Quotation 조회 및 문서 관리 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/10_sd_quotation.jpg" alt="Quotation 조회 및 문서 관리 — 원본 PDF 47페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>10_sd_quotation.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 02 / 08 · PDF 47P</span>
+     <h4 id="transys-figure-6">Quotation 조회 및 문서 관리</h4>
+     <p>Sales Area를 기준으로 Quotation 문서를 조회하고 관련 데이터를 Table Control에 표시하는 화면입니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-7">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/11_sd_credit_limit.jpg" target="_blank" rel="noopener noreferrer" aria-label="Sales Order 승인과 여신한도 확인 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/11_sd_credit_limit.jpg" alt="Sales Order 승인과 여신한도 확인 — 원본 PDF 69페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>11_sd_credit_limit.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 03 / 08 · PDF 69P</span>
+     <h4 id="transys-figure-7">Sales Order 승인과 여신한도 확인</h4>
+     <p>주문을 선택해 승인 처리할 때 고객의 Credit Limit과 납기 관련 조건을 점검하고, 결과에 따라 주문 상태를 변경하도록 구성했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-8">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/04_sales_order_cbo.jpg" target="_blank" rel="noopener noreferrer" aria-label="Sales Order 생성 — Header와 Item 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/04_sales_order_cbo.jpg" alt="Sales Order 생성 — Header와 Item — 원본 PDF 71페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>04_sales_order_cbo.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 04 / 08 · PDF 71P</span>
+     <h4 id="transys-figure-8">Sales Order 생성 — Header와 Item</h4>
+     <p>Screen 200에서 Header와 Item을 나누어 입력받고 별도 테이블에 저장하는 CBO입니다. Sold-to Party, Requested Delivery Date, Material, Order Quantity 등의 데이터를 다룹니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-9">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/05_so_input_check.jpg" target="_blank" rel="noopener noreferrer" aria-label="고객 입력값 검증 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/05_so_input_check.jpg" alt="고객 입력값 검증 — 원본 PDF 72페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>05_so_input_check.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 05 / 08 · PDF 72P</span>
+     <h4 id="transys-figure-9">고객 입력값 검증</h4>
+     <p>현재 Sales Area에 속하는 Sold-to Party 및 Ship-to Party인지 확인하고, 유효하지 않은 고객을 입력하면 오류 메시지를 출력합니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-10">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/12_sd_rdd_validation.jpg" target="_blank" rel="noopener noreferrer" aria-label="Requested Delivery Date 검증 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/12_sd_rdd_validation.jpg" alt="Requested Delivery Date 검증 — 원본 PDF 74페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>12_sd_rdd_validation.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 06 / 08 · PDF 74P</span>
+     <h4 id="transys-figure-10">Requested Delivery Date 검증</h4>
+     <p>납기일이 허용되지 않는 날짜인 경우 저장 전 오류 메시지를 표시합니다. 잘못된 요청일이 다음 프로세스로 전달되지 않도록 했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-11">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/13_sd_validation_details.jpg" target="_blank" rel="noopener noreferrer" aria-label="Document Currency 검증 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/13_sd_validation_details.jpg" alt="Document Currency 검증 — 원본 PDF 75페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>13_sd_validation_details.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 07 / 08 · PDF 75P</span>
+     <h4 id="transys-figure-11">Document Currency 검증</h4>
+     <p>주문 통화가 프로젝트에서 허용한 KRW인지 검사하고 다른 통화가 입력되면 오류를 표시하도록 구성했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-12">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/14_sd_delivery_status.jpg" target="_blank" rel="noopener noreferrer" aria-label="Outbound Delivery 승인 및 Billing 연계 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/14_sd_delivery_status.jpg" alt="Outbound Delivery 승인 및 Billing 연계 — 원본 PDF 87페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>14_sd_delivery_status.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 08 / 08 · PDF 87P</span>
+     <h4 id="transys-figure-12">Outbound Delivery 승인 및 Billing 연계</h4>
+     <p>출고 처리 상태를 확인하고 완료된 Delivery에 대해서만 Billing 생성으로 이어지도록 조건을 적용했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article></div>
+</section>
+<section class="e2e-chapter" id="transys-mm" aria-labelledby="transys-title-2">
+  <p class="eyebrow">CHAPTER 03</p>
+  <h2 class="chapter-title" id="transys-title-2">03. MM — Materials Management</h2>
+  <p class="chapter-intro">MM은 팀원이 담당한 CBO 영역입니다. 구매요청 승인부터 Purchase Order, 품질검사, 송장검증까지 전후 단계가 연결되는 모습을 소개합니다. PM으로 각 단계에서 전달되는 문서와 데이터를 확인했습니다.</p>
+  <div class="capture-list"><article class="capture-step" aria-labelledby="transys-figure-13">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/15_mm_pr_approval.jpg" target="_blank" rel="noopener noreferrer" aria-label="Purchase Requisition 승인 및 반려 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/15_mm_pr_approval.jpg" alt="Purchase Requisition 승인 및 반려 — 원본 PDF 93페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>15_mm_pr_approval.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 01 / 04 · PDF 93P</span>
+     <h4 id="transys-figure-13">Purchase Requisition 승인 및 반려</h4>
+     <p>보류 중인 구매요청을 승인하거나 반려하는 CBO입니다. 승인된 요청만 후속 Purchase Order 생성 대상으로 이동하도록 처리한 화면입니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-14">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/16_mm_po_creation.jpg" target="_blank" rel="noopener noreferrer" aria-label="Purchase Order 생성 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/16_mm_po_creation.jpg" alt="Purchase Order 생성 — 원본 PDF 99페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>16_mm_po_creation.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 02 / 04 · PDF 99P</span>
+     <h4 id="transys-figure-14">Purchase Order 생성</h4>
+     <p>승인된 PR을 선택하고 공급업체 정보를 확인해 Purchase Order를 생성하는 과정입니다. 팀 전체 E2E의 조달 단계를 보여줍니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-15">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/17_mm_quality_inspection.jpg" target="_blank" rel="noopener noreferrer" aria-label="Quality Inspection 결과 관리 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/17_mm_quality_inspection.jpg" alt="Quality Inspection 결과 관리 — 원본 PDF 100페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>17_mm_quality_inspection.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 03 / 04 · PDF 100P</span>
+     <h4 id="transys-figure-15">Quality Inspection 결과 관리</h4>
+     <p>PO 관련 품목을 ALV로 조회하고 검사 날짜, 불량 수량, 사유 등의 정보를 입력·저장하는 CBO 화면입니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-16">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/18_mm_invoice_verification.jpg" target="_blank" rel="noopener noreferrer" aria-label="Invoice Verification 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/18_mm_invoice_verification.jpg" alt="Invoice Verification — 원본 PDF 102페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>18_mm_invoice_verification.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 04 / 04 · PDF 102P</span>
+     <h4 id="transys-figure-16">Invoice Verification</h4>
+     <p>입고된 참조문서를 조회하고 Invoice 금액·전기일 등을 입력하는 화면입니다. 총액 불일치 및 필수 입력값 검증 사례가 포함돼 있습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article></div>
+</section>
+<section class="e2e-chapter" id="transys-pp" aria-labelledby="transys-title-3">
+  <p class="eyebrow">CHAPTER 04</p>
+  <h2 class="chapter-title" id="transys-title-3">04. PP — Production Planning</h2>
+  <p class="chapter-intro">PP 모듈은 팀원이 담당했습니다. 이 챕터는 개인 개발 실적으로 제시하기보다, 판매 수요가 생산계획과 생산 처리 과정으로 연결되는 팀 전체 E2E 시나리오를 보여주는 자료입니다.</p>
+  <div class="capture-list"><article class="capture-step" aria-labelledby="transys-figure-17">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/19_pp_mrp.jpg" target="_blank" rel="noopener noreferrer" aria-label="MRP 실행 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/19_pp_mrp.jpg" alt="MRP 실행 — 원본 PDF 103페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>19_pp_mrp.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 01 / 03 · PDF 103P</span>
+     <h4 id="transys-figure-17">MRP 실행</h4>
+     <p>Plant 기준 수요를 확인하고 자재 및 생산계획을 계산하는 MRP 프로그램 화면입니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-18">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/20_pp_production_order.jpg" target="_blank" rel="noopener noreferrer" aria-label="Production Order 화면 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/20_pp_production_order.jpg" alt="Production Order 화면 — 원본 PDF 107페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>20_pp_production_order.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 02 / 03 · PDF 107P</span>
+     <h4 id="transys-figure-18">Production Order 화면</h4>
+     <p>프로젝트의 생산오더 프로그램 화면입니다. 판매 수요 및 자재 조달 이후 생산단계와 연결되는 업무를 맡았습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-19">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/21_pp_confirmation.jpg" target="_blank" rel="noopener noreferrer" aria-label="Confirmation 및 품질검사 화면 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/21_pp_confirmation.jpg" alt="Confirmation 및 품질검사 화면 — 원본 PDF 109페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>21_pp_confirmation.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 03 / 03 · PDF 109P</span>
+     <h4 id="transys-figure-19">Confirmation 및 품질검사 화면</h4>
+     <p>생산실적과 품질검사 관련 프로그램 화면으로, 팀 전체 프로세스에서 생산 결과를 다음 단계에 전달하는 영역입니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article></div>
+</section>
+<section class="e2e-chapter" id="transys-fi" aria-labelledby="transys-title-4">
+  <p class="eyebrow">CHAPTER 05</p>
+  <h2 class="chapter-title" id="transys-title-4">05. FI — Financial Accounting</h2>
+  <p class="chapter-intro">FI에서는 A/R·A/P 관련 미결문서 처리와 재무제표 조회 CBO를 구현했습니다. 회계 문서를 조회하고 전기·정산하는 화면에 입력값 검증을 적용하고, Balance Sheet와 Profit & Loss를 ALV로 표시하도록 구성했습니다.</p>
+  <div class="capture-list"><article class="capture-step" aria-labelledby="transys-figure-20">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/06_fi_open_item_cbo.jpg" target="_blank" rel="noopener noreferrer" aria-label="FI Open Item 조회 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/06_fi_open_item_cbo.jpg" alt="FI Open Item 조회 — 원본 PDF 111페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>06_fi_open_item_cbo.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 01 / 04 · PDF 111P</span>
+     <h4 id="transys-figure-20">FI Open Item 조회</h4>
+     <p>회계문서의 미결 항목을 조회하고 선택한 항목의 전기·정산 화면으로 이동합니다. 회사코드와 회계연도 입력 검증을 포함했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-21">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/22_fi_posting.jpg" target="_blank" rel="noopener noreferrer" aria-label="미결항목 처리 및 금액 검증 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/22_fi_posting.jpg" alt="미결항목 처리 및 금액 검증 — 원본 PDF 112페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>22_fi_posting.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 02 / 04 · PDF 112P</span>
+     <h4 id="transys-figure-21">미결항목 처리 및 금액 검증</h4>
+     <p>선택한 회계문서의 Header와 Item을 표시하고, 입력 금액이 차변 금액과 일치하는지 검증한 뒤 처리하도록 구성했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-22">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/23_fi_balance_sheet.jpg" target="_blank" rel="noopener noreferrer" aria-label="Balance Sheet 조회 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/23_fi_balance_sheet.jpg" alt="Balance Sheet 조회 — 원본 PDF 114페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>23_fi_balance_sheet.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 03 / 04 · PDF 114P</span>
+     <h4 id="transys-figure-22">Balance Sheet 조회</h4>
+     <p>Split Container로 자산과 부채·자본을 구분한 ALV 화면을 구성했습니다. 계정명 및 타이틀의 다국어 표시 내용도 포함돼 있습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-23">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/24_fi_profit_loss.jpg" target="_blank" rel="noopener noreferrer" aria-label="Profit & Loss 조회 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/24_fi_profit_loss.jpg" alt="Profit & Loss 조회 — 원본 PDF 116페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>24_fi_profit_loss.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 04 / 04 · PDF 116P</span>
+     <h4 id="transys-figure-23">Profit & Loss 조회</h4>
+     <p>Company Code, 회계연도, 기간 조건으로 손익계산서를 조회하는 프로그램입니다. 회계 데이터를 보고서 형태로 확인하도록 구성했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article></div>
+</section>
+<section class="e2e-chapter" id="transys-pm" aria-labelledby="transys-title-5">
+  <p class="eyebrow">CHAPTER 06</p>
+  <h2 class="chapter-title" id="transys-title-5">06. PM — 개발 기준과 일정 문제 해결</h2>
+  <p class="chapter-intro">PM으로 맡았던 작업은 최초 일정 수립뿐만 아니라, 팀원들의 공통 개발 기준을 정리하고 설계·개발 단계에서 발생한 지연에 대응하는 일이었습니다. 아래 이미지는 발표자료의 실제 Issue List입니다.</p>
+  <div class="capture-list"><article class="capture-step" aria-labelledby="transys-figure-24">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/25_naming_rule_issue.jpg" target="_blank" rel="noopener noreferrer" aria-label="Naming Rule 수정 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/25_naming_rule_issue.jpg" alt="Naming Rule 수정 — 원본 PDF 119페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>25_naming_rule_issue.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 01 / 02 · PDF 119P</span>
+     <h4 id="transys-figure-24">Naming Rule 수정</h4>
+     <p>처음 작성한 Naming Rule의 설명이 모호해 팀원 간 혼란이 발생했습니다. 불필요한 규칙을 줄이고 설명을 보강해 다시 공유했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-25">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/07_schedule_issue.jpg" target="_blank" rel="noopener noreferrer" aria-label="설계·개발 일정 재조정 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/07_schedule_issue.jpg" alt="설계·개발 일정 재조정 — 원본 PDF 120페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>07_schedule_issue.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 02 / 02 · PDF 120P</span>
+     <h4 id="transys-figure-25">설계·개발 일정 재조정</h4>
+     <p>테이블 설계와 모듈 개발이 예상보다 길어졌습니다. 팀원들과 합의해 해당 단계의 기간을 늘리는 방식으로 일정을 조정했습니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article></div>
+</section>
+<section class="e2e-chapter" id="transys-technical" aria-labelledby="transys-title-6">
+  <p class="eyebrow">CHAPTER 07</p>
+  <h2 class="chapter-title" id="transys-title-6">07. Technical Note — ABAP 화면 구현</h2>
+  <p class="chapter-intro">CBO 화면에서 활용한 기술적 구현 내용을 별도로 정리했습니다. HTML Viewer 예제와 화면 종료 시 수정 여부를 판별하는 로직을 확인할 수 있습니다.</p>
+  <div class="capture-list"><article class="capture-step" aria-labelledby="transys-figure-26">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/26_html_viewer_technical.jpg" target="_blank" rel="noopener noreferrer" aria-label="HTML Viewer — GitHub 웹페이지 호출 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/26_html_viewer_technical.jpg" alt="HTML Viewer — GitHub 웹페이지 호출 — 원본 PDF 122페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>26_html_viewer_technical.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 01 / 02 · PDF 122P</span>
+     <h4 id="transys-figure-26">HTML Viewer — GitHub 웹페이지 호출</h4>
+     <p>팀 발표 표지용 HTML을 GitHub에 올리고 ABAP의 HTML Viewer에서 불러온 구현 예제입니다. 실제 업무 프로세스 처리 기능과는 구분되는 UI 기술 실습입니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article>
+<article class="capture-step" aria-labelledby="transys-figure-27">
+   <div class="capture-visual">
+     <a class="capture-image-link" href="assets/projects/transys-e2e/27_screen_exit_technical.jpg" target="_blank" rel="noopener noreferrer" aria-label="수정 전후 데이터 비교 및 저장 확인 원본 이미지 열기">
+       <img class="capture-image" src="assets/projects/transys-e2e/27_screen_exit_technical.jpg" alt="수정 전후 데이터 비교 및 저장 확인 — 원본 PDF 123페이지" loading="lazy" decoding="async" />
+       <span class="capture-fallback" hidden>이미지를 업로드하면 표시됩니다.<br><small>27_screen_exit_technical.jpg</small></span>
+     </a>
+   </div>
+   <div class="capture-copy">
+     <span class="capture-step-label">SCREEN 02 / 02 · PDF 123P</span>
+     <h4 id="transys-figure-27">수정 전후 데이터 비교 및 저장 확인</h4>
+     <p>PBO에서 처음 조회한 Header·Item 데이터를 Internal Table에 저장하고, 수정 화면을 나갈 때 변경 전 데이터와 비교해 저장 여부를 확인하는 로직입니다.</p>
+     <span class="capture-zoom-hint">이미지를 클릭하면 원본 크기로 볼 수 있습니다.</span>
+   </div>
+ </article></div>
+</section>
+  <p class="e2e-note">이 페이지는 학내 6인 팀 프로젝트의 발표자료를 바탕으로 작성했습니다. 개발 역할은 실제 수행 내용을 기준으로 구분했으며, PDF의 담당자 표기는 프로젝트 당시 팀 내부의 모듈 배정표를 따릅니다.</p>
+  <a class="action-link" href="#/projects">← All Projects</a>
 </section>
