@@ -89,3 +89,28 @@
   .e2e-note { font-size: 13.5px; }
   .capture-copy { padding: 26px 28px; }
 }
+
+/* Gallery screenshot-side text: ~5px larger, all five project pages. */
+.capture-copy p {
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.capture-copy h4 {
+  font-size: 22px;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+.capture-step-label {
+  font-size: 14px;
+}
+.capture-zoom-hint {
+  font-size: 12px;
+}
+@media (min-width: 1101px) {
+  .capture-copy p { font-size: 19.5px; }
+  .capture-copy h4 { font-size: 23px; }
+}
+@media (max-width: 700px) {
+  .capture-copy h4 { font-size: 21px; }
+}
