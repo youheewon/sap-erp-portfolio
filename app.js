@@ -32,6 +32,11 @@ async function render(){
   if(!response.ok)throw new Error("HTTP "+response.status);
   const markup=await response.text();if(serial!==requestSerial)return;
   content.innerHTML=markup;
+  content.querySelectorAll(".capture-image").forEach(img=>{
+    const onError=()=>{img.hidden=true;const fallback=img.parentElement.querySelector(".capture-fallback");if(fallback)fallback.hidden=false;};
+    img.addEventListener("error",onError);
+    if(img.complete&&img.naturalWidth===0)onError();
+  });
  }catch(error){
   if(serial!==requestSerial)return;
   content.innerHTML='<h1 class="page-title">페이지를 불러오지 못했습니다.</h1><p>GitHub Pages 배포 여부를 확인해 주세요.</p><a class="action-link" href="#/about">About Me로 이동 →</a>';
@@ -43,3 +48,13 @@ backdrop.addEventListener("click",closeMenu);
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu();});
 window.addEventListener("hashchange",render);
 render();
+content.addEventListener("click",event=>{
+ const target=event.target.closest("[data-scroll-to]");
+ if(!target)return;
+ const id=target.dataset.scrollTo;
+ const section=document.getElementById(id);
+ if(!section)return;
+ event.preventDefault();
+ section.scrollIntoView({behavior:"smooth",block:"start"});
+ content.querySelectorAll(".chapter-link").forEach(button=>button.classList.toggle("is-current",button.dataset.scrollTo===id));
+});

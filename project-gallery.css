@@ -1,0 +1,37 @@
+/* RAP SD O2C — two-app chapter navigation and annotated screenshots */
+.project-app-detail .page-heading{margin-top:36px}
+.app-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0 34px}
+.app-summary-card{padding:22px;display:flex;flex-direction:column;gap:11px}
+.app-summary-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.app-summary-top strong{font-size:18px}
+.app-sequence{font-size:10px;letter-spacing:.08em;background:#e7f0fb;color:#1c649c;border-radius:6px;padding:3px 7px;font-weight:850}
+.app-summary-card p{margin:0 0 4px;color:var(--muted);font-size:13px;flex:1}
+.app-summary-link{border:0;background:none;color:var(--accent);padding:3px 0;text-align:left;font-size:12px;font-weight:750;cursor:pointer;align-self:flex-start}
+.app-summary-link:hover,.chapter-link:hover{text-decoration:underline}
+.app-chapter-nav{position:sticky;top:63px;z-index:1;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);padding:13px 0;display:flex;align-items:center;gap:8px;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.chapter-nav-label{font-size:10px;color:#8394a6;font-weight:850;letter-spacing:.13em;margin-right:9px}
+.chapter-link{border:1px solid #d0ddeb;border-radius:8px;padding:8px 13px;color:#536a82;background:#fff;cursor:pointer;font-size:12px;font-weight:750}
+.chapter-link.is-current{border-color:#96b5d4;background:#eaf3fb;color:#16588d}
+.app-chapter{padding-top:45px;scroll-margin-top:140px}
+.chapter-title{font-size:clamp(24px,3vw,33px);line-height:1.25;letter-spacing:-.025em;margin:0 0 14px}
+.chapter-intro{font-size:14px;line-height:1.8;color:#4e6075;max-width:950px;margin:0}
+.chapter-facts{display:flex;gap:8px;flex-wrap:wrap;margin:19px 0 30px}
+.chapter-facts span{font-size:11px;color:#315d82;background:#edf4fb;padding:6px 10px;border-radius:6px;font-weight:700}
+.gallery-heading{font-size:18px;margin:34px 0 18px}
+.gallery-heading small{font-size:11px;font-weight:500;color:#798a9c;margin-left:9px}
+.capture-list{display:grid;gap:20px}
+.capture-step{border:1px solid var(--line);border-radius:13px;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.65fr) minmax(235px,1fr);background:#fff}
+.capture-visual{padding:14px;background:#f1f5fa;min-width:0;display:flex;align-items:center}
+.capture-image-link{display:flex;align-items:center;justify-content:center;min-height:180px;width:100%;background:#fff;border:1px solid #e3e8ef;border-radius:8px;overflow:hidden;text-decoration:none}
+.capture-image{display:block;max-width:100%;width:100%;height:auto;object-fit:contain}
+.capture-fallback{color:#6b7c90;text-align:center;font-size:13px;line-height:1.7;padding:30px 12px}
+.capture-fallback small{font-size:10px;word-break:break-all}
+.capture-copy{padding:25px 23px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0}
+.capture-step-label{color:var(--accent);font-size:10px;font-weight:850;letter-spacing:.025em;line-height:1.5}
+.capture-copy h4{margin:10px 0;font-size:17px;letter-spacing:-.02em;line-height:1.4}
+.capture-copy p{font-size:13px;color:#58697e;margin:0;line-height:1.75}
+.capture-zoom-hint{margin-top:16px;color:#9aa7b5;font-size:10px}
+.so-placeholder{margin-top:24px}
+.app-project-back{margin-top:46px}
+@media(max-width:1050px){.capture-step{grid-template-columns:1fr}.capture-image-link{min-height:unset}.capture-copy{padding:20px}.capture-visual{padding:12px}}
+@media(max-width:700px){.app-summary-grid{grid-template-columns:1fr}.app-chapter-nav{top:58px}.app-chapter{scroll-margin-top:135px;padding-top:32px}.gallery-heading small{display:block;margin:4px 0 0}.capture-copy h4{font-size:16px}}
