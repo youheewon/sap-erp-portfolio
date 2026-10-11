@@ -66,3 +66,12 @@
 .kt-result-panel p{font-size:14px;color:var(--muted);margin:0 0 18px;max-width:740px}
 .kt-result-link{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;padding:10px 15px;border-radius:9px;font-size:13px;font-weight:750;text-decoration:none}
 .kt-result-link:hover{filter:brightness(.94)}
+
+/* Toss MiniApp: mobile-only notice and copy-link action */
+.kt-result-panel .kt-mobile-note{margin:9px 0 19px;color:#455a70;font-size:13px;font-weight:650}
+.kt-result-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.kt-copy-link{display:inline-flex;align-items:center;justify-content:center;border:1px solid #8fb0cb;background:#fff;color:var(--accent);border-radius:9px;padding:9px 15px;min-height:42px;font-size:13px;font-weight:750;cursor:pointer}
+.kt-copy-link:hover{background:#eff6fd}
+.kt-copy-link:focus-visible,.kt-result-link:focus-visible{outline:3px solid #82acd3;outline-offset:2px}
+.kt-result-panel .kt-copy-feedback{margin:9px 0 0;color:var(--muted);font-size:12px;min-height:1em}
+.kt-copy-feedback:empty{display:none}

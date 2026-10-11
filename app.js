@@ -58,3 +58,34 @@ content.addEventListener("click",event=>{
  section.scrollIntoView({behavior:"smooth",block:"start"});
  content.querySelectorAll(".chapter-link").forEach(button=>button.classList.toggle("is-current",button.dataset.scrollTo===id));
 });
+
+/* Copy Toss MiniApp link directly from the KT project detail page. */
+content.addEventListener("click", async event=>{
+ const button=event.target.closest("button[data-copy-url]");
+ if(!button)return;
+ const url=button.dataset.copyUrl;
+ const feedback=button.closest(".kt-result-panel")?.querySelector(".kt-copy-feedback");
+ const originalLabel="링크 복사";
+ button.disabled=true;
+ try{
+  if(navigator.clipboard?.writeText){
+   await navigator.clipboard.writeText(url);
+  }else{
+   const input=document.createElement("textarea");
+   input.value=url;
+   input.setAttribute("readonly","");
+   input.style.position="fixed";
+   input.style.left="-9999px";
+   document.body.appendChild(input);
+   input.select();
+   let copied=false;
+   try{copied=document.execCommand("copy");}finally{input.remove();}
+   if(!copied)throw new Error("Clipboard copy unavailable");
+  }
+  button.textContent="복사 완료 ✓";
+  if(feedback)feedback.textContent="링크를 복사했어요. 모바일에서 붙여넣어 확인해주세요.";
+ }catch(error){
+  button.textContent=originalLabel;
+  if(feedback)feedback.textContent="복사하지 못했습니다. 보러가기 링크를 직접 복사해주세요.";
+ }finally{button.disabled=false;}
+});
