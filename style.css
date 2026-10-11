@@ -73,3 +73,10 @@
   .about-contact-links a strong { font-size: 13.5px; }
   .action-link { font-size: 14px; }
 }
+
+/* Context-aware emphasis in narrative text */
+.content p strong,
+.content li strong {
+  color: var(--text);
+  font-weight: 780;
+}
