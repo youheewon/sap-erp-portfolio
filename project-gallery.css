@@ -35,3 +35,8 @@
 .app-project-back{margin-top:46px}
 @media(max-width:1050px){.capture-step{grid-template-columns:1fr}.capture-image-link{min-height:unset}.capture-copy{padding:20px}.capture-visual{padding:12px}}
 @media(max-width:700px){.app-summary-grid{grid-template-columns:1fr}.app-chapter-nav{top:58px}.app-chapter{scroll-margin-top:135px;padding-top:32px}.gallery-heading small{display:block;margin:4px 0 0}.capture-copy h4{font-size:16px}}
+
+/* SO Request: crop-sized Draft status screenshots must not be upscaled */
+.capture-step--detail .capture-image-link{min-height:155px}
+.capture-step--detail .capture-image{width:auto;max-width:100%;max-height:82px;object-fit:contain}
+.capture-step--detail .capture-visual{background:#f6f8fb}
