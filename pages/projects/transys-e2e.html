@@ -3,7 +3,7 @@
 <p class="page-lead">현대트랜시스의 공개 자료를 바탕으로 자동차 부품 제조업의 SAP E2E 프로세스를 설계한 학내 프로젝트입니다. 표준 구축 사례가 아닌 ABAP CBO 중심의 구현 프로젝트입니다.</p>
 <div class="detail-meta"><span>ABAP Report / Screen</span><span>SD / FI CBO</span><span>E2E 프로세스 설계</span><span>Input Check</span><span>PM / 일정 관리</span></div>
 <div class="detail-grid">
-  <article class="detail-panel surface"><h3>My Role / Implementation</h3><ul><li>PM으로 모듈별 업무 흐름, 공통 데이터 및 프로그램 사양서 정리</li><li>담당자별 최초 배정과 별개로 일정 지연 영역의 SD·FI CBO를 직접 개발·보완</li><li>Sales Order의 고객·납기일·자재·수량 입력 검증 구현</li><li>후속 모듈이 사용할 데이터를 고려해 통합 테스트 수행</li></ul></article>
+  <article class="detail-panel surface"><h3>My Role / Implementation</h3><ul><li>PM으로 모듈별 업무 흐름, 공통 데이터 및 프로그램 사양서 정리</li><li>PM 업무와 병행해 일정이 지연된 SD·FI CBO 개발·보완</li><li>Sales Order의 고객·납기일·자재·수량 입력 검증 구현</li><li>후속 모듈이 사용할 데이터를 고려해 통합 테스트 수행</li></ul></article>
   <article class="detail-panel surface"><h3>Issue / Design Decision</h3><p>프로그램을 개별 화면으로만 개발하지 않고 각 단계의 입력값과 다음 모듈로 전달될 데이터를 정리해 사양서를 작성했습니다. Sales Order 생성 단계에는 유효하지 않은 값이 후속 프로세스로 전달되지 않도록 Input Check와 오류 메시지를 적용했습니다.</p></article>
 </div>
 <nav class="e2e-section-nav" aria-label="현대트랜시스 E2E 챕터 이동">
@@ -35,7 +35,7 @@
   <div class="capture-copy"><span class="capture-step-label">FIGURE 03 / 07 · PDF 14P</span><h4 id="transys-e2e-caption-3">SD·MM·PP·FI E2E 프로세스</h4><p>Sales Order 수요부터 생산, 조달, 출고, Billing 및 회계 단계까지 연결한 팀 전체 프로세스 흐름입니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
 </article></div></section>
 <section class="e2e-chapter" id="transys-e2e-chapter-2">
-<h2 class="chapter-title">02. SD·FI CBO 개발</h2><p class="chapter-intro">명목상 모듈 분장과 실제 개발 기여는 달랐습니다. PM으로 지연되는 영역의 개발을 직접 맡아 SD·FI 기능을 구현하고 입력 검증과 프로세스 연결을 진행했습니다.</p>
+<h2 class="chapter-title">02. SD·FI CBO 개발</h2><p class="chapter-intro">PM으로 프로젝트 전체 흐름을 관리하면서 SD·FI CBO를 직접 개발했습니다. 주문 입력값 검증과 후속 프로세스 간 데이터 전달도 함께 구현했습니다.</p>
 <div class="capture-list"><article class="capture-step" aria-labelledby="transys-e2e-caption-4">
   <div class="capture-visual"><a class="capture-image-link" href="assets/projects/transys-e2e/04_sales_order_cbo.jpg" target="_blank" rel="noopener noreferrer" aria-label="Sales Order 작성 프로그램 원본 이미지 보기">
     <img class="capture-image" src="assets/projects/transys-e2e/04_sales_order_cbo.jpg" alt="Sales Order 작성 프로그램 — 원본 PDF 71페이지" loading="lazy" decoding="async"/>
@@ -66,6 +66,6 @@
   </a></div>
   <div class="capture-copy"><span class="capture-step-label">FIGURE 07 / 07 · PDF 120P</span><h4 id="transys-e2e-caption-7">개발 일정 지연 대응</h4><p>처음 계획한 일정과 조정한 일정을 비교한 이슈 자료입니다. 테이블 설계와 모듈 개발에 소요되는 시간을 반영해 팀 일정에 적용했습니다.</p><span class="capture-zoom-hint">이미지 클릭 시 원본 크기로 확인</span></div>
 </article></div></section>
-<p class="e2e-note">프로젝트 발표자료의 개발자 표기는 당시 팀 내 명목상 모듈 배정을 반영합니다. 포트폴리오의 ‘My Role’은 실제 수행한 PM·SD/FI 개발·검증 경험을 기준으로 구분해 작성했습니다.</p>
+<p class="e2e-note">팀 전체 E2E 산출물과 개인 구현 영역은 My Role에서 구분했습니다. 프로젝트 중 일정이 지연된 모듈의 개발도 맡아 통합 테스트까지 연결했습니다.</p>
 <a class="action-link" href="#/projects">← All Projects</a>
 </section>
