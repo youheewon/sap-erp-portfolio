@@ -2,8 +2,8 @@ const routes={
   about:{title:"About Me",file:"pages/about.html"},
   certifications:{title:"Certifications",file:"pages/certifications.html"},
   projects:{title:"Projects",file:"pages/projects.html"},
-  "projects/nongshim-e2e":{title:"Nongshim E2E",file:"pages/projects/nongshim-e2e.html"},
-  "projects/transys-e2e":{title:"Transys E2E",file:"pages/projects/transys-e2e.html"},
+  "projects/nongshim-e2e":{title:"농심 E2E",file:"pages/projects/nongshim-e2e.html"},
+  "projects/transys-e2e":{title:"현대트랜시스 E2E",file:"pages/projects/transys-e2e.html"},
   "projects/rap-sd-o2c":{title:"RAP SD O2C",file:"pages/projects/rap-sd-o2c.html"},
   "projects/abap-rental":{title:"ABAP Rental",file:"pages/projects/abap-rental.html"},
   "projects/kt-safeline":{title:"KT SafeLine",file:"pages/projects/kt-safeline.html"}
