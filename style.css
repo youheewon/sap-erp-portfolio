@@ -39,3 +39,37 @@
 .about-contact-email > a{padding:0;background:transparent}
 .about-contact-email .email-copy-btn{align-self:flex-start}
 .about-contact-links .about-contact-email:hover{background:#eaf2fb}
+
+/* Widescreen desktop: fluid 16:9 layout and modestly larger reading text. */
+@media (min-width: 1101px) {
+  /* Let the main workspace use wide monitors instead of stopping at 1200px. */
+  .app-shell {
+    max-width: 2240px;
+    grid-template-columns: 264px minmax(0, 1fr);
+  }
+  .content {
+    width: 100%;
+    max-width: 1700px;
+    padding: clamp(38px, 3.5vw, 66px) clamp(36px, 3.65vw, 70px) 90px;
+  }
+  .workspace-header,
+  .workspace-footer {
+    padding-left: clamp(36px, 3.65vw, 70px);
+    padding-right: clamp(36px, 3.65vw, 70px);
+  }
+
+  /* Increase only the smaller content text, not the overall browser zoom. */
+  .page-lead {
+    font-size: 17px;
+    max-width: 960px;
+  }
+  .info-panel p { max-width: 78ch; }
+  .project-card h3 { font-size: 18px; }
+  .project-card p,
+  .detail-panel p,
+  .detail-panel li { font-size: 14.5px; }
+  .cert-card p,
+  .about-contact-heading p { font-size: 13.5px; }
+  .about-contact-links a strong { font-size: 13.5px; }
+  .action-link { font-size: 14px; }
+}

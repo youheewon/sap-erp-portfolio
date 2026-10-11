@@ -75,3 +75,17 @@
 .kt-copy-link:focus-visible,.kt-result-link:focus-visible{outline:3px solid #82acd3;outline-offset:2px}
 .kt-result-panel .kt-copy-feedback{margin:9px 0 0;color:var(--muted);font-size:12px;min-height:1em}
 .kt-copy-feedback:empty{display:none}
+
+/* Widescreen reading improvements: screenshots and captions grow with workspace. */
+@media (min-width: 1101px) {
+  .chapter-intro {
+    font-size: 15.5px;
+    max-width: 1080px;
+  }
+  .app-summary-card p,
+  .capture-copy p,
+  .kt-result-panel p { font-size: 14.5px; }
+  .capture-copy h4 { font-size: 18px; }
+  .e2e-note { font-size: 13.5px; }
+  .capture-copy { padding: 26px 28px; }
+}
