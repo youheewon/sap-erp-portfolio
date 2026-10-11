@@ -17,14 +17,14 @@
   <div class="app-summary-grid">
     <article class="app-summary-card surface">
       <div class="app-summary-top"><span class="app-sequence">APP 01</span><strong>OTC Monitor</strong></div>
-      <p><strong>List Report</strong>에서 Sales Order를 조회하고, Object Page의 <strong>Item별 문서 상태</strong>를 확인합니다. 선택한 Item에 대해 Delivery, Picking/PGI, Billing
-        Action을 실행합니다.</p><button type="button" class="app-summary-link" data-scroll-to="otc-monitor">OTC Monitor 살펴보기
+      <p><strong>List Report</strong>에서 Sales Order를 조회하고, Object Page의 <strong>Item별 문서 상태</strong>를 확인합니다. 선택한 Item에 대해 <strong>Delivery, Picking/PGI, Billing
+        Action</strong>을 실행합니다.</p><button type="button" class="app-summary-link" data-scroll-to="otc-monitor">OTC Monitor 살펴보기
         ↓</button>
     </article>
     <article class="app-summary-card surface">
       <div class="app-summary-top"><span class="app-sequence">APP 02</span><strong>SO Request</strong></div>
-      <p><strong>RAP Managed Draft</strong> 기반의 별도 Business Object입니다. Header와 여러 Item을 작성하고 <strong>SubmitSalesOrder Action</strong>으로 SAP 표준 Sales
-        Order를 생성합니다.</p><button type="button" class="app-summary-link" data-scroll-to="so-request">SO Request 살펴보기
+      <p><strong>RAP Managed Draft</strong> 기반의 별도 Business Object입니다. Header와 여러 Item을 작성하고 <strong>SubmitSalesOrder Action</strong>으로 <strong>SAP 표준 Sales
+        Order</strong>를 생성합니다.</p><button type="button" class="app-summary-link" data-scroll-to="so-request">SO Request 살펴보기
         ↓</button>
     </article>
   </div>
@@ -38,8 +38,8 @@
   <section id="otc-monitor" class="app-chapter" aria-labelledby="otc-title">
     <p class="eyebrow">CHAPTER 01 / OTC MONITOR</p>
     <h2 id="otc-title" class="chapter-title">주문 현황과 후속 SD 프로세스 관리</h2>
-    <p class="chapter-intro">List Report는 Sales Order Header를 주문 단위로 조회하고, Object Page는 Item과 후속 문서 상태를 표시합니다. Item
-      체크박스를 선택해 RAP Action을 실행하며, <strong>Instance Feature</strong>로 진행 상태에 맞는 기능만 활성화합니다. Delivery와 출고는 <strong>표준 OData, Billing은 SOAP API</strong>로
+    <p class="chapter-intro">List Report는 Sales Order Header를 주문 단위로 조회하고, Object Page는 Item과 후속 문서 상태를 표시합니다. <strong>Item
+      체크박스를 선택해 RAP Action을 실행</strong>하며, <strong>Instance Feature</strong>로 진행 상태에 맞는 기능만 활성화합니다. Delivery와 출고는 <strong>표준 OData, Billing은 SOAP API</strong>로
       연계했습니다.</p>
     <div class="chapter-facts"><span>List Report → Object Page</span><span>Delivery → Picking/PGI →
         Billing</span><span>선택 Item 기반 Action</span></div>
@@ -227,8 +227,8 @@
   <section id="so-request" class="app-chapter" aria-labelledby="so-title">
     <p class="eyebrow">CHAPTER 02 / SO REQUEST</p>
     <h2 id="so-title" class="chapter-title">Sales Order 생성용 RAP Draft 앱</h2>
-    <p class="chapter-intro"><strong>Sales Order 생성 기능은 OTC Monitor에서 분리</strong>했습니다. SO Request에서는 하나의 Header와 여러 Item을 작성하고 Draft로
-      관리합니다. SubmitSalesOrder Action을 실행하면 <strong>SAP 표준 Sales Order가 생성</strong>되며, 해당 주문은 OTC Monitor의 조회 대상에 포함됩니다. 두 앱 사이에 자동 화면 전환을
+    <p class="chapter-intro"><strong>Sales Order 생성 기능은 OTC Monitor에서 분리</strong>했습니다. SO Request에서는 하나의 Header와 여러 Item을 작성하고 <strong>Draft로
+      관리</strong>합니다. SubmitSalesOrder Action을 실행하면 <strong>SAP 표준 Sales Order가 생성</strong>되며, 해당 주문은 OTC Monitor의 조회 대상에 포함됩니다. 두 앱 사이에 자동 화면 전환을
       구현한 것은 아닙니다.</p>
     <div class="chapter-facts"><span>RAP Managed Draft</span><span>Header 1 : Item N</span><span>SubmitSalesOrder
         Action</span></div>
